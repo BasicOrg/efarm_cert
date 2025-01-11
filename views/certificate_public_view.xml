@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="certificate_public_view">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+                  integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"/>
+          <style>
+          .border-custom {
+            border: 1px solid #dee2e6; /* Use Bootstrap's default border color */
+            border-radius: 0.25rem;  /* Use Bootstrap's default border radius */
+            padding: 15px; /* Add padding inside the border */
+            margin-bottom: 15px; /* Add margin */
+        }
+         .arabic-title {
+          font-size: 16px;
+          font-family: Tahoma, sans-serif;
+          text-align: right;
+        }
+      </style>
+    </head>
+
+        <div class="container py-5">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white text-center">
+                    <h4 class="mb-0">Phytosanitary Certificate</h4>
+                </div>
+                <div class="card-body">
+                    <div class="row mb-4">
+                        <div class="col-12 col-md-6">
+                            <div class="border-custom">
+                                 <div style="display: flex; justify-content: space-between;">
+                                    <h6 class="font-weight-bold text-muted" style="text-align: left; width: 48%;">
+                                      Name and Address of Exporter
+                                  </h6>
+                                 <h6 class="arabic-title" style="width: 48%;">اسم وعنوان المصدر</h6>
+                              </div>
+                                <p>
+                                    <t t-esc="certificate.exporter_name"/>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                           <div class="border-custom">
+                              <div style="display: flex; justify-content: space-between;">
+                                    <h6 class="font-weight-bold text-muted" style="text-align: left; width: 48%;">
+                                        Name and Address of Consignee
+                                    </h6>
+                                    <h6 class="arabic-title" style="width: 48%;">اسم وعنوان المرسل إليه</h6>
+                                </div>
+                                <p>
+                                     <t t-esc="certificate.consignee_name"/>
+                                </p>
+                           </div>
+                        </div>
+                    </div>
+                     <div class="row mb-4">
+                         <div class="col-12 col-md-6">
+                               <div class="border-custom">
+                                 <div style="display: flex; justify-content: space-between;">
+                                        <h6 class="font-weight-bold text-muted" style="text-align: left; width: 48%;">
+                                           Means of Conveyance
+                                         </h6>
+                                          <h6 class="arabic-title" style="width: 48%;">واسطة النقل</h6>
+                                      </div>
+                                  <p><t t-esc="certificate.means_of_conveyance"/></p>
+                               </div>
+                           </div>
+                         <div class="col-12 col-md-6">
+                           <div class="border-custom">
+                              <div style="display: flex; justify-content: space-between;">
+                                    <h6 class="font-weight-bold text-muted" style="text-align: left; width: 48%;">
+                                       Point of Entry
+                                     </h6>
+                                     <h6 class="arabic-title" style="width: 48%;">نقطة الدخول</h6>
+                                </div>
+                                <p><t t-esc="certificate.point_of_entry"/></p>
+                           </div>
+                        </div>
+                   </div>
+
+                    <div class="row mb-4">
+                         <div class="col-12 col-md-6">
+                            <div class="border-custom">
+                              <div style="display: flex; justify-content: space-between;">
+                                    <h6 class="font-weight-bold text-muted" style="text-align: left; width: 48%;">
+                                        Botanical Name of Plant
+                                    </h6>
+                                     <h6 class="arabic-title" style="width: 48%;">الاسم النباتي للنبات</h6>
+                                </div>
+                                 <p><t t-esc="certificate.botanical_name"/></p>
+                            </div>
+                         </div>
+                         <div class="col-12 col-md-6">
+                             <div class="border-custom">
+                              <div style="display: flex; justify-content: space-between;">
+                                        <h6 class="font-weight-bold text-muted" style="text-align: left; width: 48%;">
+                                            Name of Produce
+                                         </h6>
+                                         <h6 class="arabic-title" style="width: 48%;">اسم المنتج</h6>
+                                  </div>
+                                   <p><t t-esc="certificate.produce_name"/></p>
+                            </div>
+                         </div>
+                    </div>
+                     <div class="row mb-4">
+                          <div class="col-12 col-md-6">
+                               <div class="border-custom">
+                                   <div style="display: flex; justify-content: space-between;">
+                                        <h6 class="font-weight-bold text-muted" style="text-align: left; width: 48%;">
+                                           Quantity Declared
+                                        </h6>
+                                      <h6 class="arabic-title" style="width: 48%;">الكمية المصرح بها</h6>
+                                 </div>
+                                  <p><t t-esc="certificate.quantity_declared"/></p>
+                             </div>
+                           </div>
+                         <div class="col-12 col-md-6">
+                               <div class="border-custom">
+                                   <div style="display: flex; justify-content: space-between;">
+                                    <h6 class="font-weight-bold text-muted" style="text-align: left; width: 48%;">
+                                           Additional Declaration
+                                      </h6>
+                                     <h6 class="arabic-title" style="width: 48%;">بيان إضافي</h6>
+                               </div>
+                                    <p><t t-esc="certificate.additional_declaration"/></p>
+                            </div>
+                        </div>
+                     </div>
+                      <div class="row mb-4">
+                             <div class="col-12 col-md-6">
+                                 <div class="border-custom">
+                                  <div style="display: flex; justify-content: space-between;">
+                                        <h6 class="font-weight-bold text-muted" style="text-align: left; width: 48%;">
+                                           Type of Treatment
+                                          </h6>
+                                           <h6 class="arabic-title" style="width: 48%;">نوع المعالجة أو التطهير</h6>
+                                  </div>
+                                       <p><t t-esc="certificate.treatment_type"/></p>
+                                  </div>
+                             </div>
+                            <div class="col-12 col-md-6">
+                                <div class="border-custom">
+                                  <div style="display: flex; justify-content: space-between;">
+                                        <h6 class="font-weight-bold text-muted" style="text-align: left; width: 48%;">
+                                            Date of Treatment
+                                        </h6>
+                                           <h6 class="arabic-title" style="width: 48%;">التاريخ المعالجة</h6>
+                                   </div>
+                                      <p><t t-esc="certificate.treatment_date"/></p>
+                               </div>
+                            </div>
+                    </div>
+                     <div class="row mb-4">
+                         <div class="col-12 col-md-6">
+                              <div class="border-custom">
+                                  <div style="display: flex; justify-content: space-between;">
+                                        <h6 class="font-weight-bold text-muted" style="text-align: left; width: 48%;">
+                                            Place of Issue
+                                        </h6>
+                                         <h6 class="arabic-title" style="width: 48%;">مكان الإصدار</h6>
+                                   </div>
+                                    <p><t t-esc="certificate.place_of_issue"/></p>
+                             </div>
+                        </div>
+                       <div class="col-12 col-md-6">
+                         <div class="border-custom">
+                            <div style="display: flex; justify-content: space-between;">
+                                <h6 class="font-weight-bold text-muted" style="text-align: left; width: 48%;">
+                                      Date of Issue
+                                 </h6>
+                                 <h6 class="arabic-title" style="width: 48%;">تاريخ الإصدار</h6>
+                                </div>
+                            <p><t t-esc="certificate.issue_date"/></p>
+                        </div>
+                     </div>
+                  </div>
+                </div>
+                <div class="card-footer text-center">
+                    <small class="text-muted">This certificate was generated by the Phytosanitary Certificate system.</small>
+                </div>
+            </div>
+        </div>
+    </template>
+</odoo>

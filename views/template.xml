@@ -1,0 +1,234 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <template id="efarm_cert.external_layout">
+        <t t-if="not o" t-set="o" t-value="doc"/>
+        <t t-if="not company">
+            <t t-if="company_id">
+                <t t-set="company" t-value="company_id"/>
+            </t>
+            <t t-elif="o and 'company_id' in o and o.company_id.sudo()">
+                <t t-set="company" t-value="o.company_id.sudo()"/>
+            </t>
+            <t t-else="else">
+                <t t-set="company" t-value="res_company"/>
+            </t>
+        </t>
+        <t t-if="company.external_report_layout_id" t-call="{{company.external_report_layout_id.sudo().key}}">
+            <t t-out="0"/>
+        </t>
+        <t t-else="else" t-call="efarm_cert.external_layout_standard">
+            <t t-out="0"/>
+        </t>
+    </template>
+    <template id="efarm_cert.external_layout_standard">
+        <div t-attf-class="article o_report_layout_standard o_company_#{company.id}_layout {{  'o_layout_background' if company.layout_background in ['Geometric', 'Custom']  else  '' }}" t-attf-style="background-image: url({{ 'data:image/png;base64,%s' % company.layout_background_image.decode('utf-8') if company.layout_background_image and company.layout_background == 'Custom' else '/base/static/img/bg_background_template.jpg' if company.layout_background == 'Geometric' else ''}});" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
+            <t t-out="0"/>
+        </div>
+    </template>
+    <template id="phytosanitary_certificate_report">
+        <t t-call="web.html_container">
+            <t t-call="efarm_cert.external_layout">
+                <style>
+                    @page {
+                        margin: 0;
+                    }
+                    body {
+                        font-family: 'Arial', sans-serif;
+                        line-height: 1.6;
+                    }
+                </style>
+                <t t-foreach="docs" t-as="o">
+                    <div class="certificate" style="font-size: 14px; font-family: Arial, sans-serif;">
+                        <div class="header" style="text-align:center; font-family: Arial, sans-serif;">
+                            <p style="font-weight: bold; font-family: Arial, sans-serif;">REPUBLIC OF IRAQ - MINISTRY OF AGRICULTURE</p>
+                            <p style="font-weight: bold; font-family: Arial, sans-serif;">Plant Protection Directorate</p>
+                            <p style="font-weight: bold; font-family: Arial, sans-serif;">Phytosanitary Certificate</p>
+                        </div>
+                        <table style="width: 100%; border-collapse: collapse; font-family: Arial, sans-serif;">
+                            <tr style="border: 1px solid black; font-family: Arial, sans-serif;">
+                                <td style="width: 50%; padding: 8px; border: 1px solid black; vertical-align:top; font-family: Arial, sans-serif;">
+                                    <div class="field" style="text-align: center; font-family: Arial, sans-serif;">
+                                        <div style="display: flex; justify-content: space-between; margin-bottom: 8px; font-family: Arial, sans-serif;">
+                                            <label style="font-weight: bold; text-align: left; width: 48%; font-family: Arial, sans-serif;">Name and Address of Exporter</label>
+                                            <label class="field-arabic" style="text-align: right; font-size: 18px; width: 48%; font-family: Tahoma, sans-serif;">اسم وعنوان المصدر</label>
+                                        </div>
+                                        <span style="display: block; font-family: Arial, sans-serif;">
+                                            <t t-esc="o.exporter_name"/>
+                                        </span>
+                                    </div>
+                                </td>
+                                <td style="width: 50%; padding: 8px; border: 1px solid black; vertical-align:top; font-family: Arial, sans-serif;">
+                                    <div class="field" style="text-align: center; font-family: Arial, sans-serif;">
+                                        <div style="display: flex; justify-content: space-between; margin-bottom: 8px; font-family: Arial, sans-serif;">
+                                            <label style="font-weight: bold; text-align: left; width: 48%; font-family: Arial, sans-serif;">Name and Address of Consignee</label>
+                                            <label class="field-arabic" style="text-align: right; font-size: 18px; width: 48%; font-family: Tahoma, sans-serif;">اسم وعنوان المرسل إليه</label>
+                                        </div>
+                                        <span style="display: block; font-family: Arial, sans-serif;">
+                                            <t t-esc="o.consignee_name"/>
+                                        </span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr style="border: 1px solid black; font-family: Arial, sans-serif;">
+                                <td style="width: 50%; padding: 8px; border: 1px solid black; vertical-align:top; font-family: Arial, sans-serif;">
+                                    <div class="field" style="text-align: center; font-family: Arial, sans-serif;">
+                                        <div style="display: flex; justify-content: space-between; margin-bottom: 8px; font-family: Arial, sans-serif;">
+                                            <label style="font-weight: bold; text-align: left; width: 48%; font-family: Arial, sans-serif;">Means of Conveyance</label>
+                                            <label class="field-arabic" style="text-align: right; font-size: 18px; width: 48%; font-family: Tahoma, sans-serif;">واسطة النقل</label>
+                                        </div>
+                                        <span style="display: block; font-family: Arial, sans-serif;">
+                                            <t t-esc="o.means_of_conveyance"/>
+                                        </span>
+                                    </div>
+                                </td>
+                                <td style="width: 50%; padding: 8px; border: 1px solid black; vertical-align:top; font-family: Arial, sans-serif;">
+                                    <div class="field" style="text-align: center; font-family: Arial, sans-serif;">
+                                        <div style="display: flex; justify-content: space-between; margin-bottom: 8px; font-family: Arial, sans-serif;">
+                                            <label style="font-weight: bold; text-align: left; width: 48%; font-family: Arial, sans-serif;">Point of Entry</label>
+                                            <label class="field-arabic" style="text-align: right; font-size: 18px; width: 48%; font-family: Tahoma, sans-serif;">نقطة الدخول</label>
+                                        </div>
+                                        <span style="display: block; font-family: Arial, sans-serif;">
+                                            <t t-esc="o.point_of_entry"/>
+                                        </span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr style="border: 1px solid black; font-family: Arial, sans-serif;">
+                                <td style="width: 50%; padding: 8px; border: 1px solid black; vertical-align:top; font-family: Arial, sans-serif;">
+                                    <div class="field" style="text-align: center; font-family: Arial, sans-serif;">
+                                        <div style="display: flex; justify-content: space-between; margin-bottom: 8px; font-family: Arial, sans-serif;">
+                                            <label style="font-weight: bold; text-align: left; width: 48%; font-family: Arial, sans-serif;">Botanical Name of Plant</label>
+                                            <label class="field-arabic" style="text-align: right; font-size: 18px; width: 48%; font-family: Tahoma, sans-serif;">الاسم النباتي للنبات</label>
+                                        </div>
+                                        <span style="display: block; font-family: Arial, sans-serif;">
+                                            <t t-esc="o.botanical_name"/>
+                                        </span>
+                                    </div>
+                                </td>
+                                <td style="width: 50%; padding: 8px; border: 1px solid black; vertical-align:top; font-family: Arial, sans-serif;">
+                                    <div class="field" style="text-align: center; font-family: Arial, sans-serif;">
+                                        <div style="display: flex; justify-content: space-between; margin-bottom: 8px; font-family: Arial, sans-serif;">
+                                            <label style="font-weight: bold; text-align: left; width: 48%; font-family: Arial, sans-serif;">Name of Produce</label>
+                                            <label class="field-arabic" style="text-align: right; font-size: 18px; width: 48%; font-family: Tahoma, sans-serif;">اسم المنتج</label>
+                                        </div>
+                                        <span style="display: block; font-family: Arial, sans-serif;">
+                                            <t t-esc="o.produce_name"/>
+                                        </span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr style="border: 1px solid black; font-family: Arial, sans-serif;">
+                                <td style="width: 50%; padding: 8px; border: 1px solid black; vertical-align:top; font-family: Arial, sans-serif;">
+                                    <div class="field" style="text-align: center; font-family: Arial, sans-serif;">
+                                        <div style="display: flex; justify-content: space-between; margin-bottom: 8px; font-family: Arial, sans-serif;">
+                                            <label style="font-weight: bold; text-align: left; width: 48%; font-family: Arial, sans-serif;">Quantity Declared</label>
+                                            <label class="field-arabic" style="text-align: right; font-size: 18px; width: 48%; font-family: Tahoma, sans-serif;">الكمية المصرح بها</label>
+                                        </div>
+                                        <span style="display: block; font-family: Arial, sans-serif;">
+                                            <t t-esc="o.quantity_declared"/>
+                                        </span>
+                                    </div>
+                                </td>
+                                <td style="width: 50%; padding: 8px; border: 1px solid black; vertical-align:top; font-family: Arial, sans-serif;">
+                                    <div class="field" style="text-align: center; font-family: Arial, sans-serif;">
+                                        <div style="display: flex; justify-content: space-between; margin-bottom: 8px; font-family: Arial, sans-serif;">
+                                            <label style="font-weight: bold; text-align: left; width: 48%; font-family: Arial, sans-serif;">Additional Declaration</label>
+                                            <label class="field-arabic" style="text-align: right; font-size: 18px; width: 48%; font-family: Tahoma, sans-serif;">بيان إضافي</label>
+                                        </div>
+                                        <span style="display: block; font-family: Arial, sans-serif;">
+                                            <t t-esc="o.additional_declaration"/>
+                                        </span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr style="border: 1px solid black; font-family: Arial, sans-serif;">
+                                <td style="width: 100%; padding: 8px; border: 1px solid black; vertical-align:top; font-family: Arial, sans-serif;" colspan="2">
+                                    <div class="field" style="font-family: Arial, sans-serif;">
+                                        <div style="display: flex; justify-content: space-between; margin-bottom: 8px; font-family: Arial, sans-serif;">
+                                            <label style="font-weight: bold; text-align: right; width: 100%; font-family: Arial, sans-serif;">تؤيد أن النباتات و / أو المنتجات النباتية الموصوفة أعلاه قد فحصت وفقا للطرق الرسمية المناسبة ووجد أنها خالية من أفاة الحجر في البلد المستورد فضلا عن الآفات غير الحجرية وبذلك فهي منسجمة مع أنظمة الصحة النباتية المعمول بها في البلد المستورد.</label>
+                                            <label style="font-weight: bold; text-align: left; width: 100%; font-family: Arial, sans-serif;">This is to certify that the plants, plant products or other regulated articles described herein: have been inspected and / or tested according to appropriate official procedures, and are considered to be free from the quarantine pests specified by the importing contracting part, and are considered to conform with the current phytosanitary requirements of the importing contracting party including those for regulated non - quarantine pest.</label>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr style="border: 1px solid black; font-family: Arial, sans-serif;">
+                                <td style="width: 100%; padding: 8px; border: 1px solid black; vertical-align:top; font-family: Arial, sans-serif;" colspan="2">
+                                    <div class="field" style="text-align: center; font-family: Arial, sans-serif;">
+                                        <div style="display: flex; justify-content: space-between; margin-bottom: 8px; font-family: Arial, sans-serif;">
+                                            <label style="font-weight: bold; text-align: center; width: 100%; font-family: Arial, sans-serif;">Disinfestation or Disinfection Treatment</label>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr style="border: 1px solid black; font-family: Arial, sans-serif;">
+                                <td style="width: 50%; padding: 8px; border: 1px solid black; vertical-align:top; font-family: Arial, sans-serif;">
+                                    <div class="field" style="text-align: center; font-family: Arial, sans-serif;">
+                                        <div style="display: flex; justify-content: space-between; margin-bottom: 8px; font-family: Arial, sans-serif;">
+                                            <label style="font-weight: bold; text-align: left; width: 48%; font-family: Arial, sans-serif;">Type of Treatment</label>
+                                            <label class="field-arabic" style="text-align: right; font-size: 18px; width: 48%; font-family: Tahoma, sans-serif;">نوع المعالجة أو التطهير</label>
+                                        </div>
+                                        <span style="display: block; font-family: Arial, sans-serif;">
+                                            <t t-esc="o.treatment_type"/>
+                                        </span>
+                                    </div>
+                                </td>
+                                <td style="width: 50%; padding: 8px; border: 1px solid black; vertical-align:top; font-family: Arial, sans-serif;">
+                                    <div class="field" style="text-align: center; font-family: Arial, sans-serif;">
+                                        <div style="display: flex; justify-content: space-between; margin-bottom: 8px; font-family: Arial, sans-serif;">
+                                            <label style="font-weight: bold; text-align: left; width: 48%; font-family: Arial, sans-serif;">Date of Treatment</label>
+                                            <label class="field-arabic" style="text-align: right; font-size: 18px; width: 48%; font-family: Tahoma, sans-serif;">التاريخ المعالجة</label>
+                                        </div>
+                                        <span style="display: block; font-family: Arial, sans-serif;">
+                                            <t t-esc="o.treatment_date"/>
+                                        </span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr style="border: 1px solid black; font-family: Arial, sans-serif;">
+                                <td style="width: 50%; padding: 8px; border: 1px solid black; vertical-align:top; font-family: Arial, sans-serif;">
+                                    <div class="field" style="text-align: center; font-family: Arial, sans-serif;">
+                                        <div style="display: flex; justify-content: space-between; margin-bottom: 8px; font-family: Arial, sans-serif;">
+                                            <label style="font-weight: bold; text-align: left; width: 48%; font-family: Arial, sans-serif;">Place of Issue</label>
+                                            <label class="field-arabic" style="text-align: right; font-size: 18px; width: 48%; font-family: Tahoma, sans-serif;">مكان الإصدار</label>
+                                        </div>
+                                        <span style="display: block; font-family: Arial, sans-serif;">
+                                            <t t-esc="o.place_of_issue"/>
+                                        </span>
+                                    </div>
+                                </td>
+                                <td style="width: 50%; padding: 8px; border: 1px solid black; vertical-align:top; font-family: Arial, sans-serif;">
+                                    <div class="field" style="text-align: center; font-family: Arial, sans-serif;">
+                                        <div style="display: flex; justify-content: space-between; margin-bottom: 8px; font-family: Arial, sans-serif;">
+                                            <label style="font-weight: bold; text-align: left; width: 48%; font-family: Arial, sans-serif;">Date of Issue</label>
+                                            <label class="field-arabic" style="text-align: right; font-size: 18px; width: 48%; font-family: Tahoma, sans-serif;">تاريخ الإصدار</label>
+                                        </div>
+                                        <span style="display: block; font-family: Arial, sans-serif;">
+                                            <t t-esc="o.issue_date"/>
+                                        </span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr style="border: 1px solid black; font-family: Arial, sans-serif;">
+                                <td style="width: 50%; padding: 8px; border: 1px solid black; vertical-align:top; font-family: Arial, sans-serif;">
+                                    <div class="field" style="font-family: Arial, sans-serif;">
+                                        <div style="display: flex; justify-content: space-between; margin-bottom: 8px; font-family: Arial, sans-serif;">
+                                            <label style="font-weight: bold; text-align: right; width: 100%; font-family: Arial, sans-serif;">لاتتحمل دائرة وقاية المزروعات أو أي من موظفيها تبعات المسؤولية المالية الناتجة عن استخدام هذه الشهادة.</label>
+                                            <label style="font-weight: bold; text-align: left; width: 100%; font-family: Arial, sans-serif;">No financial liability with respect to this certificate shall attach to the state Board for Plant Protection or to any of its officers or representatives.</label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td style="width: 50%; padding: 8px; border: 1px solid black; vertical-align:top; font-family: Arial, sans-serif;">
+                                    <div style="text-align: center; font-family: Arial, sans-serif;">
+                                        <t t-set="verification_portal_url" t-value="request.env['ir.config_parameter'].sudo().get_param('web.base.url')"/>
+                                        <div t-out="verification_portal_url + '/cert/' + o.uuid" t-options="{'widget': 'barcode', 'symbology': 'QR', 'img_style': 'width:120px;height:120px;'}"/>
+                                        <p>Scan the QR code for request details</p>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

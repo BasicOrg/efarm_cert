@@ -1,21 +1,13 @@
 # -*- coding: utf-8 -*-
-# from odoo import http
+from odoo import http
+from odoo.http import request
+from werkzeug.exceptions import NotFound
 
+class CertificateController(http.Controller):
 
-# class Demo(http.Controller):
-#     @http.route('/demo/demo/', auth='public')
-#     def index(self, **kw):
-#         return "Hello, world"
-
-#     @http.route('/demo/demo/objects/', auth='public')
-#     def list(self, **kw):
-#         return http.request.render('demo.listing', {
-#             'root': '/demo/demo',
-#             'objects': http.request.env['demo.demo'].search([]),
-#         })
-
-#     @http.route('/demo/demo/objects/<model("demo.demo"):obj>/', auth='public')
-#     def object(self, obj, **kw):
-#         return http.request.render('demo.object', {
-#             'object': obj
-#         })
+    @http.route('/cert/<string:uuid>', auth='public', website=True)
+    def display_certificate(self, uuid, **kwargs):
+        certificate = request.env['phytosanitary.certificate'].sudo().search([('uuid', '=', uuid)], limit=1)
+        if not certificate:
+           raise NotFound()
+        return request.render('efarm_cert.certificate_public_view', {'certificate': certificate})

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="phytosanitary_certificate_tree" model="ir.ui.view">
+        <field name="name">phytosanitary.certificate.tree</field>
+        <field name="model">phytosanitary.certificate</field>
+        <field name="arch" type="xml">
+            <tree string="Phytosanitary Certificates">
+                <field name="name"/>
+                <field name="exporter_name"/>
+                <field name="consignee_name"/>
+                <field name="botanical_name"/>
+                <field name="produce_name"/>
+                <field name="treatment_date"/>
+                <field name="issue_date"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="phytosanitary_certificate_form" model="ir.ui.view">
+        <field name="name">phytosanitary.certificate.form</field>
+        <field name="model">phytosanitary.certificate</field>
+        <field name="arch" type="xml">
+            <form string="Phytosanitary Certificate">
+                <header>
+                    <field name="name" class="oe_read_only oe_inline" nolabel="1"/>
+                </header>
+
+                <sheet>
+                    <group name="exporter_consignee_group" string="Exporter and Consignee Details">
+                        <group>
+                            <field name="exporter_name" />
+                            <field name="consignee_name" />
+                        </group>
+                    </group>
+                    <group name="conveyance_entry_group" string="Conveyance and Entry Details">
+                        <group>
+                            <field name="means_of_conveyance" />
+                            <field name="point_of_entry" />
+                        </group>
+
+                    </group>
+
+                    <group name="product_details_group" string="Product Details">
+                        <group>
+                            <field name="botanical_name" />
+                            <field name="produce_name" />
+
+                        </group>
+                        <group>
+                            <field name="quantity_declared" />
+                            <field name="additional_declaration" attrs="{'placeholder':'Add any specific notes to include in certificate.'}" widget="text"/>
+                        </group>
+
+                    </group>
+
+                    <group name="treatment_details_group" string="Treatment Details">
+                        <group>
+                            <field name="treatment_type" />
+                            <field name="treatment_date" />
+                        </group>
+
+
+                    </group>
+
+                    <group name="issue_details_group" string="Issue Details">
+                        <group>
+                            <field name="place_of_issue" />
+                            <field name="issue_date" />
+                        </group>
+
+                    </group>
+                    <gruop>
+                        <field name="uuid"/>
+                    </gruop>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>
