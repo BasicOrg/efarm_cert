@@ -5,8 +5,15 @@ from odoo import models, fields, api
 class PhytosanitaryCertificate(models.Model):
     _name = 'phytosanitary.certificate'
     _description = 'Phytosanitary Certificate'
+    _inherit = ['mail.thread']
 
-    name = fields.Char(required = True, copy=False, readonly=True, index=True, default='New')
+    activity_ids = fields.One2many('mail.activity', 'res_id', string='Activities', domain=[('res_model', '=', 'phytosanitary.certificate')])
+    name = fields.Char(required = True, copy=False, readonly=True, index=True, default='')
+    state = fields.Selection([
+        ('new', 'New'),
+        ('confirmed', 'Confirmed'),
+        ('canceled', 'Canceled')
+    ], string='State', default='new', required=True, tracking=True)
     exporter_name = fields.Many2one('phytosanitary.exporter', string="Name and Address of Exporter")
     consignee_name = fields.Many2one('phytosanitary.consignee', string="Name and Address of Consignee")
     to_protection_organization = fields.Many2one('phytosanitary.protection.organization', string="To the Protection Organization of")
@@ -40,11 +47,30 @@ class PhytosanitaryCertificate(models.Model):
             else:
                 record.uuid = False
 
-    @api.model
-    def create(self, values):
-        values['name'] = self.env['ir.sequence'].next_by_code('phytosanitary.certificate.code')
-        res = super(PhytosanitaryCertificate, self).create(values)
-        return res
+
+    def action_confirm(self):
+        """Confirm the certificate and generate certificate number"""
+        for record in self:
+            if record.state == 'new':
+                # Generate certificate number when confirming
+                certificate_number = self.env['ir.sequence'].next_by_code('phytosanitary.certificate.code')
+                record.write({
+                    'name': certificate_number,
+                    'state': 'confirmed',
+                    'certificate_issue_date': fields.Date.today()
+                })
+
+    def action_cancel(self):
+        """Cancel the certificate"""
+        for record in self:
+            if record.state in ('new', 'confirmed'):
+                record.write({'state': 'canceled'})
+
+    def action_reset_to_new(self):
+        """Reset certificate to new state"""
+        for record in self:
+            if record.state in ('confirmed', 'canceled'):
+                record.write({'state': 'new'})
 
     @api.onchange('produce_name')
     def _onchange_produce_name(self):
@@ -209,7 +235,6 @@ class PhytosanitaryProduceName(models.Model):
 
     name = fields.Char(string="Produce Name", required=True)
     botanical_name_id = fields.Many2one('phytosanitary.botanical.name', string="Botanical Name")
-
 
     def write(self, values):
         if 'botanical_name_id' in values and not self.env.context.get('skip_product_name_link'):

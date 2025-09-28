@@ -5,179 +5,537 @@
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
                   integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"/>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
           <style>
           .border-custom {
-            border: 1px solid #dee2e6; /* Use Bootstrap's default border color */
-            border-radius: 0.25rem;  /* Use Bootstrap's default border radius */
-            padding: 15px; /* Add padding inside the border */
-            margin-bottom: 15px; /* Add margin */
+            border: 1px solid #dee2e6;
+            border-radius: 0.25rem;
+            padding: 15px;
+            margin-bottom: 15px;
         }
          .arabic-title {
           font-size: 16px;
           font-family: Tahoma, sans-serif;
           text-align: right;
         }
+        .certificate-header {
+            background: linear-gradient(135deg, #2E4B89 0%, #1a365d 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .state-badge {
+            font-size: 14px;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+        .state-confirmed { background-color: #28a745; color: white; }
+        .state-new { background-color: #17a2b8; color: white; }
+        .state-canceled { background-color: #dc3545; color: white; }
+        
+        /* Attachment styles */
+        .attachment-card {
+            border: 1px solid #dee2e6;
+            border-radius: 0.5rem;
+            padding: 15px;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+        .attachment-card:hover {
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .attachment-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        .pdf-icon { color: #dc3545; }
+        .image-icon { color: #28a745; }
+        .file-icon { color: #6c757d; }
+        
+        .image-thumbnail {
+            max-width: 150px;
+            max-height: 150px;
+            object-fit: cover;
+            border-radius: 0.25rem;
+            cursor: pointer;
+        }
+        
+        .pdf-viewer {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #dee2e6;
+            border-radius: 0.25rem;
+        }
+        
+        /* Modal styles */
+        .modal-lg-custom {
+            max-width: 90vw;
+        }
+        
+        .modal-body-custom {
+            max-height: 80vh;
+            overflow: auto;
+        }
+        
+        .nav-tabs .nav-link.active {
+            background-color: #2E4B89;
+            color: white;
+            border-color: #2E4B89;
+        }
+        
+        .nav-tabs .nav-link {
+            color: #2E4B89;
+            border-color: #dee2e6;
+        }
+        
+        .nav-tabs .nav-link:hover {
+            border-color: #2E4B89;
+            color: #1a365d;
+        }
       </style>
     </head>
 
         <div class="container py-5">
-            <div class="card shadow-sm">
-                <div class="card-header bg-primary text-white text-center">
+            <div class="card shadow-lg">
+                <div class="certificate-header">
+                    <h3 class="mb-2">جمهورية العراق - وزارة الزراعة</h3>
+                    <h4 class="mb-2">REPUBLIC OF IRAQ - MINISTRY OF AGRICULTURE</h4>
+                    <h5 class="mb-3">شهادة السلامة من الآفات الزراعية</h5>
                     <h4 class="mb-0">Phytosanitary Certificate</h4>
-                </div>
-                <div class="card-body">
-                    <div class="row mb-4">
-                        <div class="col-12 col-md-6">
-                            <div class="border-custom">
-                                 <div style="display: flex; justify-content: space-between;">
-                                    <h6 class="font-weight-bold text-muted" style="text-align: left; width: 48%;">
-                                      Name and Address of Exporter
-                                  </h6>
-                                 <h6 class="arabic-title" style="width: 48%;">اسم وعنوان المصدر</h6>
-                              </div>
-                                <p>
-                                    <t t-esc="certificate.exporter_name"/>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6">
-                           <div class="border-custom">
-                              <div style="display: flex; justify-content: space-between;">
-                                    <h6 class="font-weight-bold text-muted" style="text-align: left; width: 48%;">
-                                        Name and Address of Consignee
-                                    </h6>
-                                    <h6 class="arabic-title" style="width: 48%;">اسم وعنوان المرسل إليه</h6>
-                                </div>
-                                <p>
-                                     <t t-esc="certificate.consignee_name"/>
-                                </p>
-                           </div>
-                        </div>
+                    <div class="mt-3">
+                        <h5>Certificate No: <t t-esc="certificate.name"/></h5>
+                        <span t-att-class="'state-badge state-' + certificate.state">
+                            <t t-esc="certificate.state.title()"/>
+                        </span>
                     </div>
-                     <div class="row mb-4">
-                         <div class="col-12 col-md-6">
-                               <div class="border-custom">
-                                 <div style="display: flex; justify-content: space-between;">
-                                        <h6 class="font-weight-bold text-muted" style="text-align: left; width: 48%;">
-                                           Means of Conveyance
-                                         </h6>
-                                          <h6 class="arabic-title" style="width: 48%;">واسطة النقل</h6>
-                                      </div>
-                                  <p><t t-esc="certificate.means_of_conveyance"/></p>
-                               </div>
-                           </div>
-                         <div class="col-12 col-md-6">
-                           <div class="border-custom">
-                              <div style="display: flex; justify-content: space-between;">
-                                    <h6 class="font-weight-bold text-muted" style="text-align: left; width: 48%;">
-                                       Point of Entry
-                                     </h6>
-                                     <h6 class="arabic-title" style="width: 48%;">نقطة الدخول</h6>
-                                </div>
-                                <p><t t-esc="certificate.point_of_entry"/></p>
-                           </div>
-                        </div>
-                   </div>
+                </div>
+                
+                <!-- Tab Navigation -->
+                <div class="card-header bg-light">
+                    <ul class="nav nav-tabs card-header-tabs" id="certificateTabs" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link active" id="details-tab" data-toggle="tab" href="#details" role="tab" aria-controls="details" aria-selected="true">
+                                <i class="fa fa-file-text-o"></i> Certificate Details
+                            </a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" id="attachments-tab" data-toggle="tab" href="#attachments" role="tab" aria-controls="attachments" aria-selected="false">
+                                <i class="fa fa-paperclip"></i> Attachments (<span id="attachment-count"><t t-esc="len(attachments)"/></span>)
+                            </a>
+                        </li>
+                    </ul>
+                </div>
 
-                    <div class="row mb-4">
-                         <div class="col-12 col-md-6">
-                            <div class="border-custom">
-                              <div style="display: flex; justify-content: space-between;">
-                                    <h6 class="font-weight-bold text-muted" style="text-align: left; width: 48%;">
-                                        Botanical Name of Plant
-                                    </h6>
-                                     <h6 class="arabic-title" style="width: 48%;">الاسم النباتي للنبات</h6>
-                                </div>
-                                 <p><t t-esc="certificate.botanical_name"/></p>
-                            </div>
-                         </div>
-                         <div class="col-12 col-md-6">
-                             <div class="border-custom">
-                              <div style="display: flex; justify-content: space-between;">
-                                        <h6 class="font-weight-bold text-muted" style="text-align: left; width: 48%;">
-                                            Name of Produce
-                                         </h6>
-                                         <h6 class="arabic-title" style="width: 48%;">اسم المنتج</h6>
-                                  </div>
-                                   <p><t t-esc="certificate.produce_name"/></p>
-                            </div>
-                         </div>
-                    </div>
-                     <div class="row mb-4">
-                          <div class="col-12 col-md-6">
-                               <div class="border-custom">
-                                   <div style="display: flex; justify-content: space-between;">
-                                        <h6 class="font-weight-bold text-muted" style="text-align: left; width: 48%;">
-                                           Quantity Declared
-                                        </h6>
-                                      <h6 class="arabic-title" style="width: 48%;">الكمية المصرح بها</h6>
-                                 </div>
-                                  <p><t t-esc="certificate.quantity_declared"/></p>
-                             </div>
-                           </div>
-                         <div class="col-12 col-md-6">
-                               <div class="border-custom">
-                                   <div style="display: flex; justify-content: space-between;">
-                                    <h6 class="font-weight-bold text-muted" style="text-align: left; width: 48%;">
-                                           Additional Declaration
-                                      </h6>
-                                     <h6 class="arabic-title" style="width: 48%;">بيان إضافي</h6>
-                               </div>
-                                    <p><t t-esc="certificate.additional_declaration"/></p>
-                            </div>
-                        </div>
-                     </div>
-                      <div class="row mb-4">
-                             <div class="col-12 col-md-6">
-                                 <div class="border-custom">
-                                  <div style="display: flex; justify-content: space-between;">
-                                        <h6 class="font-weight-bold text-muted" style="text-align: left; width: 48%;">
-                                           Type of Treatment
+                <div class="card-body">
+                    <div class="tab-content" id="certificateTabContent">
+                        
+                        <!-- Certificate Details Tab -->
+                        <div class="tab-pane fade show active" id="details" role="tabpanel" aria-labelledby="details-tab">
+                            
+                            <!-- Party Information -->
+                            <div class="row mb-4">
+                                <div class="col-12 col-md-6">
+                                    <div class="border-custom">
+                                         <div style="display: flex; justify-content: space-between;">
+                                            <h6 class="font-weight-bold text-muted" style="text-align: left; width: 48%;">
+                                              Name and Address of Exporter
                                           </h6>
-                                           <h6 class="arabic-title" style="width: 48%;">نوع المعالجة أو التطهير</h6>
-                                  </div>
-                                       <p><t t-esc="certificate.treatment_type"/></p>
-                                  </div>
-                             </div>
-                            <div class="col-12 col-md-6">
-                                <div class="border-custom">
-                                  <div style="display: flex; justify-content: space-between;">
-                                        <h6 class="font-weight-bold text-muted" style="text-align: left; width: 48%;">
-                                            Date of Treatment
-                                        </h6>
-                                           <h6 class="arabic-title" style="width: 48%;">التاريخ المعالجة</h6>
-                                   </div>
-                                      <p><t t-esc="certificate.treatment_date"/></p>
-                               </div>
-                            </div>
-                    </div>
-                     <div class="row mb-4">
-                         <div class="col-12 col-md-6">
-                              <div class="border-custom">
-                                  <div style="display: flex; justify-content: space-between;">
-                                        <h6 class="font-weight-bold text-muted" style="text-align: left; width: 48%;">
-                                            Place of Issue
-                                        </h6>
-                                         <h6 class="arabic-title" style="width: 48%;">مكان الإصدار</h6>
-                                   </div>
-                                    <p><t t-esc="certificate.place_of_issue"/></p>
-                             </div>
-                        </div>
-                       <div class="col-12 col-md-6">
-                         <div class="border-custom">
-                            <div style="display: flex; justify-content: space-between;">
-                                <h6 class="font-weight-bold text-muted" style="text-align: left; width: 48%;">
-                                      Date of Issue
-                                 </h6>
-                                 <h6 class="arabic-title" style="width: 48%;">تاريخ الإصدار</h6>
+                                         <h6 class="arabic-title" style="width: 48%;">اسم وعنوان المصدر</h6>
+                                      </div>
+                                        <p><t t-esc="certificate.exporter_name.name if certificate.exporter_name else ''"/></p>
+                                        <p><t t-esc="certificate.exporter_name.address if certificate.exporter_name else ''"/></p>
+                                    </div>
                                 </div>
-                            <p><t t-esc="certificate.issue_date"/></p>
+                                <div class="col-12 col-md-6">
+                                   <div class="border-custom">
+                                      <div style="display: flex; justify-content: space-between;">
+                                            <h6 class="font-weight-bold text-muted" style="text-align: left; width: 48%;">
+                                                Name and Address of Consignee
+                                            </h6>
+                                            <h6 class="arabic-title" style="width: 48%;">اسم وعنوان المرسل إليه</h6>
+                                        </div>
+                                        <p><t t-esc="certificate.consignee_name.name if certificate.consignee_name else ''"/></p>
+                                        <p><t t-esc="certificate.consignee_name.address if certificate.consignee_name else ''"/></p>
+                                   </div>
+                                </div>
+                            </div>
+
+                            <!-- Protection Organization -->
+                            <div class="row mb-4">
+                                <div class="col-12">
+                                    <div class="border-custom">
+                                        <div style="display: flex; justify-content: space-between;">
+                                            <h6 class="font-weight-bold text-muted" style="text-align: left; width: 48%;">
+                                                To Plant Protection Organization of
+                                            </h6>
+                                            <h6 class="arabic-title" style="width: 48%;">إلى منظمة وقاية النباتات في</h6>
+                                        </div>
+                                        <p><t t-esc="certificate.to_protection_organization.name if certificate.to_protection_organization else ''"/></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Transport Information -->
+                             <div class="row mb-4">
+                                 <div class="col-12 col-md-4">
+                                       <div class="border-custom">
+                                         <div style="display: flex; justify-content: space-between;">
+                                                <h6 class="font-weight-bold text-muted" style="text-align: left; width: 48%;">
+                                                   Place of Origin
+                                                 </h6>
+                                                  <h6 class="arabic-title" style="width: 48%;">مكان المنشأ</h6>
+                                              </div>
+                                          <p><t t-esc="certificate.place_of_origin.name if certificate.place_of_origin else ''"/></p>
+                                       </div>
+                                   </div>
+                                 <div class="col-12 col-md-4">
+                                       <div class="border-custom">
+                                         <div style="display: flex; justify-content: space-between;">
+                                                <h6 class="font-weight-bold text-muted" style="text-align: left; width: 48%;">
+                                                   Means of Conveyance
+                                                 </h6>
+                                                  <h6 class="arabic-title" style="width: 48%;">واسطة النقل</h6>
+                                              </div>
+                                          <p><t t-esc="certificate.means_of_conveyance.name if certificate.means_of_conveyance else ''"/></p>
+                                       </div>
+                                   </div>
+                                 <div class="col-12 col-md-4">
+                                   <div class="border-custom">
+                                      <div style="display: flex; justify-content: space-between;">
+                                            <h6 class="font-weight-bold text-muted" style="text-align: left; width: 48%;">
+                                               Point of Entry
+                                             </h6>
+                                             <h6 class="arabic-title" style="width: 48%;">نقطة الدخول</h6>
+                                        </div>
+                                        <p><t t-esc="certificate.point_of_entry.name if certificate.point_of_entry else ''"/></p>
+                                   </div>
+                                </div>
+                           </div>
+
+                            <!-- Product Information -->
+                            <div class="row mb-4">
+                                 <div class="col-12 col-md-6">
+                                     <div class="border-custom">
+                                      <div style="display: flex; justify-content: space-between;">
+                                                <h6 class="font-weight-bold text-muted" style="text-align: left; width: 48%;">
+                                                    Name of Produce
+                                                 </h6>
+                                                 <h6 class="arabic-title" style="width: 48%;">اسم المنتج</h6>
+                                          </div>
+                                           <p><t t-esc="certificate.produce_name.name if certificate.produce_name else ''"/></p>
+                                    </div>
+                                 </div>
+                                 <div class="col-12 col-md-6">
+                                    <div class="border-custom">
+                                      <div style="display: flex; justify-content: space-between;">
+                                            <h6 class="font-weight-bold text-muted" style="text-align: left; width: 48%;">
+                                                Botanical Name of Plant
+                                            </h6>
+                                             <h6 class="arabic-title" style="width: 48%;">الاسم النباتي للنبات</h6>
+                                        </div>
+                                         <p><t t-esc="certificate.botanical_name.name if certificate.botanical_name else ''"/></p>
+                                    </div>
+                                 </div>
+                            </div>
+
+                            <!-- Package and Quantity Information -->
+                             <div class="row mb-4">
+                                  <div class="col-12 col-md-4">
+                                       <div class="border-custom">
+                                           <div style="display: flex; justify-content: space-between;">
+                                                <h6 class="font-weight-bold text-muted" style="text-align: left; width: 48%;">
+                                                   Quantity Declared
+                                                </h6>
+                                              <h6 class="arabic-title" style="width: 48%;">الكمية المصرح بها</h6>
+                                         </div>
+                                          <p><t t-esc="certificate.quantity_declared"/> <t t-esc="certificate.quantity_uom.name if certificate.quantity_uom else ''"/></p>
+                                     </div>
+                                   </div>
+                                 <div class="col-12 col-md-4">
+                                       <div class="border-custom">
+                                           <div style="display: flex; justify-content: space-between;">
+                                            <h6 class="font-weight-bold text-muted" style="text-align: left; width: 48%;">
+                                                   Packages Description
+                                              </h6>
+                                             <h6 class="arabic-title" style="width: 48%;">وصف الطرود</h6>
+                                       </div>
+                                            <p><t t-esc="certificate.packages_number_description"/></p>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-4">
+                                       <div class="border-custom">
+                                           <div style="display: flex; justify-content: space-between;">
+                                            <h6 class="font-weight-bold text-muted" style="text-align: left; width: 48%;">
+                                                   Distinguishing Marks
+                                              </h6>
+                                             <h6 class="arabic-title" style="width: 48%;">العلامات المميزة</h6>
+                                       </div>
+                                            <p><t t-esc="certificate.distinguishing_marks"/></p>
+                                    </div>
+                                </div>
+                             </div>
+
+                             <!-- Additional Declaration -->
+                             <div class="row mb-4">
+                                <div class="col-12">
+                                       <div class="border-custom">
+                                           <div style="display: flex; justify-content: space-between;">
+                                            <h6 class="font-weight-bold text-muted" style="text-align: left; width: 48%;">
+                                                   Additional Declaration
+                                              </h6>
+                                             <h6 class="arabic-title" style="width: 48%;">بيان إضافي</h6>
+                                       </div>
+                                            <p><t t-esc="certificate.additional_declaration"/></p>
+                                    </div>
+                                </div>
+                             </div>
+
+                             <!-- Treatment Information -->
+                              <div class="row mb-4">
+                                     <div class="col-12 col-md-6">
+                                         <div class="border-custom">
+                                          <div style="display: flex; justify-content: space-between;">
+                                                <h6 class="font-weight-bold text-muted" style="text-align: left; width: 48%;">
+                                                   Type of Treatment
+                                                  </h6>
+                                                   <h6 class="arabic-title" style="width: 48%;">نوع المعالجة أو التطهير</h6>
+                                          </div>
+                                               <p><t t-esc="certificate.disinfection_treatment_type.name if certificate.disinfection_treatment_type else ''"/></p>
+                                          </div>
+                                     </div>
+                                    <div class="col-12 col-md-6">
+                                        <div class="border-custom">
+                                          <div style="display: flex; justify-content: space-between;">
+                                                <h6 class="font-weight-bold text-muted" style="text-align: left; width: 48%;">
+                                                    Chemical Ingredient
+                                                </h6>
+                                                   <h6 class="arabic-title" style="width: 48%;">المادة الكيميائية</h6>
+                                           </div>
+                                              <p><t t-esc="certificate.disinfection_chemical_ingredient.name if certificate.disinfection_chemical_ingredient else ''"/></p>
+                                       </div>
+                                    </div>
+                            </div>
+
+                            <!-- Treatment Details -->
+                              <div class="row mb-4">
+                                     <div class="col-12 col-md-4">
+                                         <div class="border-custom">
+                                          <div style="display: flex; justify-content: space-between;">
+                                                <h6 class="font-weight-bold text-muted" style="text-align: left; width: 48%;">
+                                                   Duration &amp; Temperature
+                                                  </h6>
+                                                   <h6 class="arabic-title" style="width: 48%;">المدة ودرجة الحرارة</h6>
+                                          </div>
+                                               <p><t t-esc="certificate.disinfection_duration_and_temperature"/></p>
+                                          </div>
+                                     </div>
+                                    <div class="col-12 col-md-4">
+                                        <div class="border-custom">
+                                          <div style="display: flex; justify-content: space-between;">
+                                                <h6 class="font-weight-bold text-muted" style="text-align: left; width: 48%;">
+                                                    Concentration
+                                                </h6>
+                                                   <h6 class="arabic-title" style="width: 48%;">التركيز</h6>
+                                           </div>
+                                              <p><t t-esc="certificate.disinfection_concentration"/></p>
+                                       </div>
+                                    </div>
+                                    <div class="col-12 col-md-4">
+                                        <div class="border-custom">
+                                          <div style="display: flex; justify-content: space-between;">
+                                                <h6 class="font-weight-bold text-muted" style="text-align: left; width: 48%;">
+                                                    Date of Treatment
+                                                </h6>
+                                                   <h6 class="arabic-title" style="width: 48%;">تاريخ المعالجة</h6>
+                                           </div>
+                                              <p><t t-esc="certificate.disinfection_date.strftime('%d/%m/%Y') if certificate.disinfection_date else ''"/></p>
+                                       </div>
+                                    </div>
+                            </div>
+
+                            <!-- Treatment Additional Info -->
+                             <div class="row mb-4">
+                                <div class="col-12">
+                                       <div class="border-custom">
+                                           <div style="display: flex; justify-content: space-between;">
+                                            <h6 class="font-weight-bold text-muted" style="text-align: left; width: 48%;">
+                                                   Additional Treatment Information
+                                              </h6>
+                                             <h6 class="arabic-title" style="width: 48%;">معلومات إضافية للمعالجة</h6>
+                                       </div>
+                                            <p><t t-esc="certificate.disinfection_additional_info"/></p>
+                                    </div>
+                                </div>
+                             </div>
+
+                             <!-- Certificate Issue Information -->
+                             <div class="row mb-4">
+                                 <div class="col-12 col-md-6">
+                                      <div class="border-custom">
+                                          <div style="display: flex; justify-content: space-between;">
+                                                <h6 class="font-weight-bold text-muted" style="text-align: left; width: 48%;">
+                                                    Place of Issue
+                                                </h6>
+                                                 <h6 class="arabic-title" style="width: 48%;">مكان الإصدار</h6>
+                                           </div>
+                                            <p><t t-esc="certificate.certificate_place_of_issue.name if certificate.certificate_place_of_issue else ''"/></p>
+                                     </div>
+                                </div>
+                               <div class="col-12 col-md-6">
+                                 <div class="border-custom">
+                                    <div style="display: flex; justify-content: space-between;">
+                                        <h6 class="font-weight-bold text-muted" style="text-align: left; width: 48%;">
+                                              Date of Issue
+                                         </h6>
+                                         <h6 class="arabic-title" style="width: 48%;">تاريخ الإصدار</h6>
+                                        </div>
+                                    <p><t t-esc="certificate.certificate_issue_date.strftime('%d/%m/%Y') if certificate.certificate_issue_date else ''"/></p>
+                                </div>
+                             </div>
+                          </div>
+
+                          <!-- Certificate Text -->
+                          <div class="row mb-4">
+                            <div class="col-12">
+                                <div class="border-custom bg-light">
+                                    <p class="mb-2"><strong>This is to certify that the plants, plant products or other regulated articles described herein have been inspected and/or tested according to appropriate official procedures, and are considered to be free from the quarantine pests specified by the importing contracting party, and are considered to conform with the current phytosanitary requirements of the importing contracting party including those for regulated non-quarantine pest.</strong></p>
+                                    <p class="text-right mb-0"><strong>نؤيد أن النباتات أو المنتجات النباتية الموصوفة أعلاه قد فحصت وفقا للطرق الرسمية المناسبة، ووجد أنها خالية من آفات الحجر في البلد المستورد، وأنها مطابقة للمتطلبات النباتية المعمول بها في البلد المستورد.</strong></p>
+                                </div>
+                            </div>
+                          </div>
+                          
                         </div>
-                     </div>
-                  </div>
+                        
+                        <!-- Attachments Tab -->
+                        <div class="tab-pane fade" id="attachments" role="tabpanel" aria-labelledby="attachments-tab">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h5 class="mb-4">Certificate Attachments</h5>
+                                    <t t-if="not attachments">
+                                        <div class="text-center py-5">
+                                            <i class="fa fa-paperclip fa-3x text-muted mb-3"></i>
+                                            <h6 class="text-muted">No attachments found for this certificate</h6>
+                                        </div>
+                                    </t>
+                                    <t t-else="">
+                                        <div class="row">
+                                            <t t-foreach="attachments" t-as="attachment">
+                                                <div class="col-12 col-md-6 col-lg-4 mb-4">
+                                                    <div class="attachment-card text-center">
+                                                        <t t-if="'image' in attachment.mimetype">
+                                                            <!-- Image Attachment -->
+                                                            <div class="attachment-icon image-icon">
+                                                                <i class="fa fa-file-image-o"></i>
+                                                            </div>
+                                                            <img t-att-src="'/web/content/' + str(attachment.id)" 
+                                                                 t-att-alt="attachment.name"
+                                                                 class="image-thumbnail"
+                                                                 data-toggle="modal" 
+                                                                 t-att-data-target="'#imageModal' + str(attachment.id)"/>
+                                                            <br/>
+                                                            <small class="text-muted mt-2 d-block"><t t-esc="attachment.name"/></small>
+                                                            
+                                                            <!-- Image Modal -->
+                                                            <div class="modal fade" t-att-id="'imageModal' + str(attachment.id)" tabindex="-1" role="dialog">
+                                                                <div class="modal-dialog modal-lg-custom" role="document">
+                                                                    <div class="modal-content">
+                                                                        <div class="modal-header">
+                                                                            <h5 class="modal-title"><t t-esc="attachment.name"/></h5>
+                                                                            <button type="button" class="close" data-dismiss="modal">
+                                                                                <span aria-hidden="true">&amp;times;</span>
+                                                                            </button>
+                                                                        </div>
+                                                                        <div class="modal-body modal-body-custom text-center">
+                                                                            <img t-att-src="'/web/content/' + str(attachment.id)" 
+                                                                                 t-att-alt="attachment.name"
+                                                                                 style="max-width: 100%; height: auto;"/>
+                                                                        </div>
+                                                                        <div class="modal-footer">
+                                                                            <a t-att-href="'/web/content/' + str(attachment.id) + '?download=true'" 
+                                                                               class="btn btn-primary">
+                                                                                <i class="fa fa-download"></i> Download
+                                                                            </a>
+                                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            
+                                                        </t>
+                                                        <t t-elif="attachment.mimetype == 'application/pdf'">
+                                                            <!-- PDF Attachment -->
+                                                            <div class="attachment-icon pdf-icon">
+                                                                <i class="fa fa-file-pdf-o"></i>
+                                                            </div>
+                                                            <h6><t t-esc="attachment.name"/></h6>
+                                                            <button class="btn btn-outline-primary btn-sm" 
+                                                                    data-toggle="modal" 
+                                                                    t-att-data-target="'#pdfModal' + str(attachment.id)">
+                                                                <i class="fa fa-eye"></i> View PDF
+                                                            </button>
+                                                            <a t-att-href="'/web/content/' + str(attachment.id) + '?download=true'" 
+                                                               class="btn btn-outline-secondary btn-sm ml-2">
+                                                                <i class="fa fa-download"></i> Download
+                                                            </a>
+                                                            
+                                                            <!-- PDF Modal -->
+                                                            <div class="modal fade" t-att-id="'pdfModal' + str(attachment.id)" tabindex="-1" role="dialog">
+                                                                <div class="modal-dialog modal-lg-custom" role="document">
+                                                                    <div class="modal-content">
+                                                                        <div class="modal-header">
+                                                                            <h5 class="modal-title"><t t-esc="attachment.name"/></h5>
+                                                                            <button type="button" class="close" data-dismiss="modal">
+                                                                                <span aria-hidden="true">&amp;times;</span>
+                                                                            </button>
+                                                                        </div>
+                                                                        <div class="modal-body modal-body-custom p-0">
+                                                                            <iframe t-att-src="'/web/content/' + str(attachment.id)" 
+                                                                                    class="pdf-viewer"
+                                                                                    frameborder="0">
+                                                                            </iframe>
+                                                                        </div>
+                                                                        <div class="modal-footer">
+                                                                            <a t-att-href="'/web/content/' + str(attachment.id) + '?download=true'" 
+                                                                               class="btn btn-primary">
+                                                                                <i class="fa fa-download"></i> Download
+                                                                            </a>
+                                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            
+                                                        </t>
+                                                        <t t-else="">
+                                                            <!-- Other File Types -->
+                                                            <div class="attachment-icon file-icon">
+                                                                <i class="fa fa-file-o"></i>
+                                                            </div>
+                                                            <h6><t t-esc="attachment.name"/></h6>
+                                                            <small class="text-muted d-block">
+                                                                Size: <t t-esc="round(attachment.file_size / 1024.0, 2)"/> KB
+                                                            </small>
+                                                            <a t-att-href="'/web/content/' + str(attachment.id) + '?download=true'" 
+                                                               class="btn btn-outline-primary btn-sm mt-2">
+                                                                <i class="fa fa-download"></i> Download
+                                                            </a>
+                                                        </t>
+                                                    </div>
+                                                </div>
+                                            </t>
+                                        </div>
+                                    </t>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
                 </div>
+                
                 <div class="card-footer text-center">
-                    <small class="text-muted">This certificate was generated by the Phytosanitary Certificate system.</small>
+                    <small class="text-muted">Certificate UUID: <t t-esc="certificate.uuid"/> | Generated by Phytosanitary Certificate System</small>
                 </div>
             </div>
         </div>

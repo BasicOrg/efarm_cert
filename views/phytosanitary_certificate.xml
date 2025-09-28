@@ -26,6 +26,12 @@
             <field name="model">phytosanitary.certificate</field>
             <field name="arch" type="xml">
                 <form string="Phytosanitary Certificate">
+                    <header>
+                        <button name="action_confirm" type="object" string="Confirm Certificate" class="oe_highlight" attrs="{'invisible': [('state', '!=', 'new')]}" confirm="Are you sure you want to confirm this certificate? This action will generate an official certificate number and cannot be undone."/>
+                        <button name="action_cancel" type="object" string="Cancel" attrs="{'invisible': [('state', '!=', 'new')]}"/>
+                        <button name="action_reset_to_new" type="object" string="Reset to New" attrs="{'invisible': [('state', '!=', 'canceled')]}"/>
+                        <field name="state" widget="statusbar" statusbar_visible="new,confirmed,canceled"/>
+                    </header>
                     <sheet>
                         <!-- Header -->
                         <div class="oe_title">
@@ -91,7 +97,7 @@
                                 <field name="disinfection_additional_info" nolabel="1" placeholder="Additional treatment information..."/>
                             </group>
                         </group>
-                        
+
                         <!-- Certificate Information -->
                         <group name="certificate_info" string="Certificate Information">
                             <group>
@@ -105,6 +111,11 @@
                         </group>
 
                     </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
                 </form>
             </field>
         </record>
@@ -123,6 +134,10 @@
                     <field name="certificate_place_of_issue"/>
                     <field name="to_protection_organization"/>
                     
+                    <filter name="state_new" string="New" domain="[('state', '=', 'new')]"/>
+                    <filter name="state_confirmed" string="Confirmed" domain="[('state', '=', 'confirmed')]"/>
+                    <filter name="state_canceled" string="Canceled" domain="[('state', '=', 'canceled')]"/>
+                    <separator/>
                     <filter name="this_month" string="This Month" 
                             domain="[('certificate_issue_date', '&gt;=', (context_today() + relativedelta(day=1)).strftime('%Y-%m-%d')),
                                     ('certificate_issue_date', '&lt;', (context_today() + relativedelta(months=1, day=1)).strftime('%Y-%m-%d'))]"/>
@@ -131,6 +146,7 @@
                                     ('certificate_issue_date', '&lt;=', (context_today() + relativedelta(month=12, day=31)).strftime('%Y-%m-%d'))]"/>
                     
                     <group expand="0" string="Group By">
+                        <filter string="State" name="group_state" domain="[]" context="{'group_by': 'state'}"/>
                         <filter string="Exporter" name="group_exporter" domain="[]" context="{'group_by': 'exporter_name'}"/>
                         <filter string="Consignee" name="group_consignee" domain="[]" context="{'group_by': 'consignee_name'}"/>
                         <filter string="Produce" name="group_produce" domain="[]" context="{'group_by': 'produce_name'}"/>

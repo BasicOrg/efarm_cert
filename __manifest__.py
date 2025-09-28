@@ -9,6 +9,7 @@
     'version': '15.0',
     'depends': [
         'base',
+        'mail',
     ],
     'data': [
         'data/ir_sequence.xml',

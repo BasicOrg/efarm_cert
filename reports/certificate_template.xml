@@ -625,7 +625,7 @@
                                             <td class="layout-borders cell-w-18"></td>
                                             <td class="layout-borders cell-w-18 cell-value">
                                                 <span class="field-value">
-                                                    <t t-esc="o.disinfection_date"/>
+                                                    <t t-esc="o.disinfection_date" t-options="{'widget': 'date', 'format': 'dd/MM'}"/>
                                                 </span>
                                             </td>
                                         </tr>
@@ -652,7 +652,7 @@
                                         <tr class="layout-borders">
                                             <td class="layout-borders cell-w-30"></td>
                                             <td class="layout-borders cell-w-70 cell-value cell-fixed-large">
-                                                <span class="field-value"><t t-esc="o.certificate_issue_date"/></span>
+                                                <span class="field-value"><t t-esc="o.certificate_issue_date" t-options="{'widget': 'date', 'format': 'dd/MM/yyyy'}"/></span>
                                             </td>
                                         </tr>
                                     </table>
@@ -687,7 +687,7 @@
                                 </div>
                                 <div class="info-item">
                                     <div class="info-label">Issue Date</div>
-                                    <div class="info-value"><t t-esc="o.certificate_issue_date"/></div>
+                                    <div class="info-value"><t t-esc="o.certificate_issue_date" t-options="{'widget': 'date', 'format': 'dd/MM/yyyy'}"/></div>
                                 </div>
                                 <div class="info-item">
                                     <div class="info-label">Origin</div>
