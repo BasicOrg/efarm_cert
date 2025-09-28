@@ -1,85 +1,145 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <odoo>
+    <data>
 
-    <record id="phytosanitary_certificate_tree" model="ir.ui.view">
-        <field name="name">phytosanitary.certificate.tree</field>
-        <field name="model">phytosanitary.certificate</field>
-        <field name="arch" type="xml">
-            <tree string="Phytosanitary Certificates">
-                <field name="name"/>
-                <field name="exporter_name"/>
-                <field name="consignee_name"/>
-                <field name="botanical_name"/>
-                <field name="produce_name"/>
-                <field name="treatment_date"/>
-                <field name="issue_date"/>
-            </tree>
-        </field>
-    </record>
+        <!-- Tree View -->
+        <record id="view_phytosanitary_certificate_tree" model="ir.ui.view">
+            <field name="name">phytosanitary.certificate.tree</field>
+            <field name="model">phytosanitary.certificate</field>
+            <field name="arch" type="xml">
+                <tree string="Phytosanitary Certificates">
+                    <field name="name"/>
+                    <field name="exporter_name"/>
+                    <field name="consignee_name"/>
+                    <field name="produce_name"/>
+                    <field name="botanical_name"/>
+                    <field name="certificate_issue_date"/>
+                    <field name="certificate_place_of_issue"/>
+                    <field name="to_protection_organization"/>
+                </tree>
+            </field>
+        </record>
 
-
-    <record id="phytosanitary_certificate_form" model="ir.ui.view">
-        <field name="name">phytosanitary.certificate.form</field>
-        <field name="model">phytosanitary.certificate</field>
-        <field name="arch" type="xml">
-            <form string="Phytosanitary Certificate">
-                <header>
-                </header>
-
-                <sheet>
-                    <div class="oe_title">
-                        <h1>
-                            <field name="name" class="oe_read_only oe_inline"/>
-                        </h1>
-                    </div>
-                    <group name="exporter_consignee_group" string="Exporter and Consignee Details">
-                        <group>
-                            <field name="exporter_name" />
-                            <field name="consignee_name" />
+        <!-- Form View -->
+        <record id="view_phytosanitary_certificate_form" model="ir.ui.view">
+            <field name="name">phytosanitary.certificate.form</field>
+            <field name="model">phytosanitary.certificate</field>
+            <field name="arch" type="xml">
+                <form string="Phytosanitary Certificate">
+                    <sheet>
+                        <!-- Header -->
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" readonly="1" class="oe_inline"/>
+                            </h1>
+                        </div>
+                        
+                        <!-- Party Information -->
+                        <group name="party_info" string="Party Information">
+                            <group name="exporter_group" string="Exporter Details">
+                                <field name="exporter_name" options="{'no_quick_create': True}"/>
+                            </group>
+                            <group name="consignee_group" string="Consignee Details">
+                                <field name="consignee_name" options="{'no_quick_create': True}"/>
+                            </group>
                         </group>
+
+                        <!-- Route Information -->
+                        <group name="route_info" string="Route Information">
+                            <group>
+                                <field name="to_protection_organization"/>
+                                <field name="means_of_conveyance"/>
+                            </group>
+                            <group>
+                                <field name="point_of_entry"/>
+                                <field name="place_of_origin"/>
+                            </group>
+                        </group>
+
+                        <!-- Product Information -->
+                        <group name="product_info" string="Product Information">
+                            <group>
+                                <field name="produce_name"/>
+                                <field name="botanical_name"/>
+                                <field name="packages_number_description"/>
+                                <field name="distinguishing_marks"/>
+                            </group>
+                            <group>
+                                <field name="quantity_declared"/>
+                                <field name="quantity_uom"/>
+                            </group>
+                        </group>
+
+                        <!-- Additional Declaration -->
+                        <group name="additional_info" string="Additional Information">
+                            <field name="additional_declaration" nolabel="1" placeholder="Enter any additional declarations or requirements..."/>
+                        </group>
+
+
+                        <!-- Disinfection/Treatment Information -->
+                        <group name="disinfection_info" string="Disinfection &amp; Treatment Details">
+                            <group>
+                                <field name="disinfection_treatment_type"/>
+                                <field name="disinfection_chemical_ingredient"/>
+                                <field name="disinfection_date"/>
+                            </group>
+                            <group>
+                                <field name="disinfection_duration_and_temperature"/>
+                                <field name="disinfection_concentration"/>
+                            </group>
+                            <group colspan="2">
+                                <field name="disinfection_additional_info" nolabel="1" placeholder="Additional treatment information..."/>
+                            </group>
+                        </group>
+                        
+                        <!-- Certificate Information -->
+                        <group name="certificate_info" string="Certificate Information">
+                            <group>
+                                <field name="certificate_issue_date"/>
+                                <field name="certificate_place_of_issue"/>
+                                <field name="create_uid"/>
+                            </group>
+                            <group>
+                                <field name="uuid" readonly="1"/>
+                            </group>
+                        </group>
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <!-- Search View -->
+        <record id="view_phytosanitary_certificate_search" model="ir.ui.view">
+            <field name="name">phytosanitary.certificate.search</field>
+            <field name="model">phytosanitary.certificate</field>
+            <field name="arch" type="xml">
+                <search string="Search Phytosanitary Certificates">
+                    <field name="name"/>
+                    <field name="exporter_name"/>
+                    <field name="consignee_name"/>
+                    <field name="produce_name"/>
+                    <field name="botanical_name"/>
+                    <field name="certificate_place_of_issue"/>
+                    <field name="to_protection_organization"/>
+                    
+                    <filter name="this_month" string="This Month" 
+                            domain="[('certificate_issue_date', '&gt;=', (context_today() + relativedelta(day=1)).strftime('%Y-%m-%d')),
+                                    ('certificate_issue_date', '&lt;', (context_today() + relativedelta(months=1, day=1)).strftime('%Y-%m-%d'))]"/>
+                    <filter name="this_year" string="This Year" 
+                            domain="[('certificate_issue_date', '&gt;=', (context_today() + relativedelta(month=1, day=1)).strftime('%Y-%m-%d')),
+                                    ('certificate_issue_date', '&lt;=', (context_today() + relativedelta(month=12, day=31)).strftime('%Y-%m-%d'))]"/>
+                    
+                    <group expand="0" string="Group By">
+                        <filter string="Exporter" name="group_exporter" domain="[]" context="{'group_by': 'exporter_name'}"/>
+                        <filter string="Consignee" name="group_consignee" domain="[]" context="{'group_by': 'consignee_name'}"/>
+                        <filter string="Produce" name="group_produce" domain="[]" context="{'group_by': 'produce_name'}"/>
+                        <filter string="Issue Place" name="group_issue_place" domain="[]" context="{'group_by': 'certificate_place_of_issue'}"/>
+                        <filter string="Issue Date" name="group_issue_date" domain="[]" context="{'group_by': 'certificate_issue_date'}"/>
                     </group>
-                    <group name="conveyance_entry_group" string="Conveyance and Entry Details">
-                        <group>
-                            <field name="means_of_conveyance" />
-                            <field name="point_of_entry" />
-                        </group>
+                </search>
+            </field>
+        </record>
 
-                    </group>
-
-                    <group name="product_details_group" string="Product Details">
-                        <group>
-                            <field name="botanical_name" />
-                            <field name="produce_name" />
-
-                        </group>
-                        <group>
-                            <field name="quantity_declared" />
-                            <field name="additional_declaration" attrs="{'placeholder':'Add any specific notes to include in certificate.'}" widget="text"/>
-                        </group>
-
-                    </group>
-
-                    <group name="treatment_details_group" string="Treatment Details">
-                        <group>
-                            <field name="treatment_type" />
-                            <field name="treatment_date" />
-                        </group>
-
-
-                    </group>
-
-                    <group name="issue_details_group" string="Issue Details">
-                        <group>
-                            <field name="place_of_issue" />
-                            <field name="issue_date" />
-                        </group>
-
-                    </group>
-                    <gruop>
-                        <field name="uuid"/>
-                    </gruop>
-                </sheet>
-            </form>
-        </field>
-    </record>
+    </data>
 </odoo>

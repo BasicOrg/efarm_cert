@@ -7,13 +7,16 @@
     'website': "https://site.basic-powered.com",
     'category': 'Uncategorized',
     'version': '15.0',
-    'depends': ['base'],
+    'depends': [
+        'base',
+    ],
     'data': [
         'data/ir_sequence.xml',
         'security/ir.model.access.csv',
-        'views/template.xml',
-        'views/views.xml',
+        'reports/reports.xml',
+        'reports/certificate_template.xml',
         'views/phytosanitary_certificate.xml',
         'views/certificate_public_view.xml',
+        'views/views.xml',
     ],
 }
