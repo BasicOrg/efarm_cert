@@ -157,5 +157,148 @@
             </field>
         </record>
 
+        <!-- Exporter Tree View -->
+        <record id="view_phytosanitary_exporter_tree" model="ir.ui.view">
+            <field name="name">phytosanitary.exporter.tree</field>
+            <field name="model">phytosanitary.exporter</field>
+            <field name="arch" type="xml">
+                <tree string="Exporters" editable="bottom">
+                    <field name="name"/>
+                    <field name="address"/>
+                    <field name="contact_person"/>
+                    <field name="phone"/>
+                    <field name="email"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Consignee Tree View -->
+        <record id="view_phytosanitary_consignee_tree" model="ir.ui.view">
+            <field name="name">phytosanitary.consignee.tree</field>
+            <field name="model">phytosanitary.consignee</field>
+            <field name="arch" type="xml">
+                <tree string="Consignees" editable="bottom">
+                    <field name="name"/>
+                    <field name="address"/>
+                    <field name="contact_person"/>
+                    <field name="phone"/>
+                    <field name="email"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Protection Organization Tree View -->
+        <record id="view_phytosanitary_protection_organization_tree" model="ir.ui.view">
+            <field name="name">phytosanitary.protection.organization.tree</field>
+            <field name="model">phytosanitary.protection.organization</field>
+            <field name="arch" type="xml">
+                <tree string="Protection Organizations" editable="bottom">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Conveyance Method Tree View -->
+        <record id="view_phytosanitary_conveyance_method_tree" model="ir.ui.view">
+            <field name="name">phytosanitary.conveyance.method.tree</field>
+            <field name="model">phytosanitary.conveyance.method</field>
+            <field name="arch" type="xml">
+                <tree string="Conveyance Methods" editable="bottom">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Entry Point Tree View -->
+        <record id="view_phytosanitary_entry_point_tree" model="ir.ui.view">
+            <field name="name">phytosanitary.entry.point.tree</field>
+            <field name="model">phytosanitary.entry.point</field>
+            <field name="arch" type="xml">
+                <tree string="Entry Points" editable="bottom">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Origin Place Tree View -->
+        <record id="view_phytosanitary_origin_place_tree" model="ir.ui.view">
+            <field name="name">phytosanitary.origin.place.tree</field>
+            <field name="model">phytosanitary.origin.place</field>
+            <field name="arch" type="xml">
+                <tree string="Places of Origin" editable="bottom">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Produce Name Tree View -->
+        <record id="view_phytosanitary_produce_name_tree" model="ir.ui.view">
+            <field name="name">phytosanitary.produce.name.tree</field>
+            <field name="model">phytosanitary.produce.name</field>
+            <field name="arch" type="xml">
+                <tree string="Produce Names" editable="bottom">
+                    <field name="name"/>
+                    <field name="botanical_name_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Botanical Name Tree View -->
+        <record id="view_phytosanitary_botanical_name_tree" model="ir.ui.view">
+            <field name="name">phytosanitary.botanical.name.tree</field>
+            <field name="model">phytosanitary.botanical.name</field>
+            <field name="arch" type="xml">
+                <tree string="Botanical Names" editable="bottom">
+                    <field name="name"/>
+                    <field name="produce_name_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- UOM Tree View -->
+        <record id="view_phytosanitary_uom_tree" model="ir.ui.view">
+            <field name="name">phytosanitary.uom.tree</field>
+            <field name="model">phytosanitary.uom</field>
+            <field name="arch" type="xml">
+                <tree string="Units of Measurement" editable="bottom">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Treatment Type Tree View -->
+        <record id="view_phytosanitary_disinfection_treatment_type_tree" model="ir.ui.view">
+            <field name="name">phytosanitary.disinfection.treatment.type.tree</field>
+            <field name="model">phytosanitary.disinfection.treatment.type</field>
+            <field name="arch" type="xml">
+                <tree string="Treatment Types" editable="bottom">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Chemical Ingredient Tree View -->
+        <record id="view_phytosanitary_disinfection_chemical_ingredient_tree" model="ir.ui.view">
+            <field name="name">phytosanitary.disinfection.chemical.ingredient.tree</field>
+            <field name="model">phytosanitary.disinfection.chemical.ingredient</field>
+            <field name="arch" type="xml">
+                <tree string="Chemical Ingredients" editable="bottom">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Certificate Issue Place Tree View -->
+        <record id="view_phytosanitary_certificate_issue_place_tree" model="ir.ui.view">
+            <field name="name">phytosanitary.certificate.issue.place.tree</field>
+            <field name="model">phytosanitary.certificate.issue.place</field>
+            <field name="arch" type="xml">
+                <tree string="Certificate Issue Places" editable="bottom">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+
     </data>
 </odoo>

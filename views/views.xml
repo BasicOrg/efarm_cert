@@ -6,11 +6,319 @@
 			<field name="view_mode">tree,form</field>
 		</record>
 
+		<!-- Exporter Action -->
+		<record id="action_phytosanitary_exporter" model="ir.actions.act_window">
+			<field name="name">Exporters</field>
+			<field name="res_model">phytosanitary.exporter</field>
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_phytosanitary_exporter_tree"/>
+			<field name="help" type="html">
+				<p class="o_view_nocontent_smiling_face">
+					Create your first Exporter
+				</p>
+				<p>
+					Manage exporters who will be issuing phytosanitary certificates.
+				</p>
+			</field>
+		</record>
+
+		<!-- Consignee Action -->
+		<record id="action_phytosanitary_consignee" model="ir.actions.act_window">
+			<field name="name">Consignees</field>
+			<field name="res_model">phytosanitary.consignee</field>
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_phytosanitary_consignee_tree"/>
+			<field name="help" type="html">
+				<p class="o_view_nocontent_smiling_face">
+					Create your first Consignee
+				</p>
+				<p>
+					Manage consignees who will be receiving the products.
+				</p>
+			</field>
+		</record>
+
+		<!-- Protection Organization Action -->
+		<record id="action_phytosanitary_protection_organization" model="ir.actions.act_window">
+			<field name="name">Protection Organizations</field>
+			<field name="res_model">phytosanitary.protection.organization</field>
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_phytosanitary_protection_organization_tree"/>
+			<field name="help" type="html">
+				<p class="o_view_nocontent_smiling_face">
+					Create your first Protection Organization
+				</p>
+				<p>
+					Manage plant protection organizations by destination country.
+				</p>
+			</field>
+		</record>
+
+		<!-- Conveyance Method Action -->
+		<record id="action_phytosanitary_conveyance_method" model="ir.actions.act_window">
+			<field name="name">Conveyance Methods</field>
+			<field name="res_model">phytosanitary.conveyance.method</field>
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_phytosanitary_conveyance_method_tree"/>
+			<field name="help" type="html">
+				<p class="o_view_nocontent_smiling_face">
+					Create your first Conveyance Method
+				</p>
+				<p>
+					Manage transportation methods (air, sea, land, etc.).
+				</p>
+			</field>
+		</record>
+
+		<!-- Entry Point Action -->
+		<record id="action_phytosanitary_entry_point" model="ir.actions.act_window">
+			<field name="name">Entry Points</field>
+			<field name="res_model">phytosanitary.entry.point</field>
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_phytosanitary_entry_point_tree"/>
+			<field name="help" type="html">
+				<p class="o_view_nocontent_smiling_face">
+					Create your first Entry Point
+				</p>
+				<p>
+					Manage entry points (ports, airports, border crossings).
+				</p>
+			</field>
+		</record>
+
+		<!-- Origin Place Action -->
+		<record id="action_phytosanitary_origin_place" model="ir.actions.act_window">
+			<field name="name">Places of Origin</field>
+			<field name="res_model">phytosanitary.origin.place</field>
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_phytosanitary_origin_place_tree"/>
+			<field name="help" type="html">
+				<p class="o_view_nocontent_smiling_face">
+					Create your first Place of Origin
+				</p>
+				<p>
+					Manage places where products originate from.
+				</p>
+			</field>
+		</record>
+
+		<!-- Produce Name Action -->
+		<record id="action_phytosanitary_produce_name" model="ir.actions.act_window">
+			<field name="name">Produce Names</field>
+			<field name="res_model">phytosanitary.produce.name</field>
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_phytosanitary_produce_name_tree"/>
+			<field name="help" type="html">
+				<p class="o_view_nocontent_smiling_face">
+					Create your first Produce Name
+				</p>
+				<p>
+					Manage common names of agricultural products.
+				</p>
+			</field>
+		</record>
+
+		<!-- Botanical Name Action -->
+		<record id="action_phytosanitary_botanical_name" model="ir.actions.act_window">
+			<field name="name">Botanical Names</field>
+			<field name="res_model">phytosanitary.botanical.name</field>
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_phytosanitary_botanical_name_tree"/>
+			<field name="help" type="html">
+				<p class="o_view_nocontent_smiling_face">
+					Create your first Botanical Name
+				</p>
+				<p>
+					Manage scientific botanical names of plants.
+				</p>
+			</field>
+		</record>
+
+		<!-- UOM Action -->
+		<record id="action_phytosanitary_uom" model="ir.actions.act_window">
+			<field name="name">Units of Measurement</field>
+			<field name="res_model">phytosanitary.uom</field>
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_phytosanitary_uom_tree"/>
+			<field name="help" type="html">
+				<p class="o_view_nocontent_smiling_face">
+					Create your first Unit of Measurement
+				</p>
+				<p>
+					Manage units used for measuring quantities (kg, tons, etc.).
+				</p>
+			</field>
+		</record>
+
+		<!-- Treatment Type Action -->
+		<record id="action_phytosanitary_disinfection_treatment_type" model="ir.actions.act_window">
+			<field name="name">Treatment Types</field>
+			<field name="res_model">phytosanitary.disinfection.treatment.type</field>
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_phytosanitary_disinfection_treatment_type_tree"/>
+			<field name="help" type="html">
+				<p class="o_view_nocontent_smiling_face">
+					Create your first Treatment Type
+				</p>
+				<p>
+					Manage types of disinfection treatments.
+				</p>
+			</field>
+		</record>
+
+		<!-- Chemical Ingredient Action -->
+		<record id="action_phytosanitary_disinfection_chemical_ingredient" model="ir.actions.act_window">
+			<field name="name">Chemical Ingredients</field>
+			<field name="res_model">phytosanitary.disinfection.chemical.ingredient</field>
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_phytosanitary_disinfection_chemical_ingredient_tree"/>
+			<field name="help" type="html">
+				<p class="o_view_nocontent_smiling_face">
+					Create your first Chemical Ingredient
+				</p>
+				<p>
+					Manage chemical ingredients used in treatments.
+				</p>
+			</field>
+		</record>
+
+		<!-- Certificate Issue Place Action -->
+		<record id="action_phytosanitary_certificate_issue_place" model="ir.actions.act_window">
+			<field name="name">Certificate Issue Places</field>
+			<field name="res_model">phytosanitary.certificate.issue.place</field>
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_phytosanitary_certificate_issue_place_tree"/>
+			<field name="help" type="html">
+				<p class="o_view_nocontent_smiling_face">
+					Create your first Certificate Issue Place
+				</p>
+				<p>
+					Manage places where certificates are issued.
+				</p>
+			</field>
+		</record>
+
+
 		<menuitem 
 			id="root_menu_phytosanitary_certificate"
 			name="Phytosanitary Management"
 			sequence="10"
 			action="action_phytosanitary_certificate"/>
+
+
+
+		<!-- Configuration Root Menu -->
+		<menuitem id="menu_phytosanitary_configuration" 
+				name="Configuration" 
+				parent="root_menu_phytosanitary_certificate" 
+				sequence="100"/>
+
+		<!-- Party Configuration Submenu -->
+		<menuitem id="menu_phytosanitary_configuration_parties" 
+				name="Parties" 
+				parent="menu_phytosanitary_configuration" 
+				sequence="10"/>
+
+		<!-- Product Configuration Submenu -->
+		<menuitem id="menu_phytosanitary_configuration_products" 
+				name="Products" 
+				parent="menu_phytosanitary_configuration" 
+				sequence="20"/>
+
+		<!-- Transport Configuration Submenu -->
+		<menuitem id="menu_phytosanitary_configuration_transport" 
+				name="Transport" 
+				parent="menu_phytosanitary_configuration" 
+				sequence="30"/>
+
+		<!-- Treatment Configuration Submenu -->
+		<menuitem id="menu_phytosanitary_configuration_treatment" 
+				name="Treatment" 
+				parent="menu_phytosanitary_configuration" 
+				sequence="40"/>
+
+		<!-- General Configuration Submenu -->
+		<menuitem id="menu_phytosanitary_configuration_general" 
+				name="General" 
+				parent="menu_phytosanitary_configuration" 
+				sequence="50"/>
+
+		<!-- Party Menu Items -->
+		<menuitem id="menu_phytosanitary_exporter" 
+				name="Exporters" 
+				action="action_phytosanitary_exporter" 
+				parent="menu_phytosanitary_configuration_parties" 
+				sequence="10"/>
+
+		<menuitem id="menu_phytosanitary_consignee" 
+				name="Consignees" 
+				action="action_phytosanitary_consignee" 
+				parent="menu_phytosanitary_configuration_parties" 
+				sequence="20"/>
+
+		<menuitem id="menu_phytosanitary_protection_organization" 
+				name="Protection Organizations" 
+				action="action_phytosanitary_protection_organization" 
+				parent="menu_phytosanitary_configuration_parties" 
+				sequence="30"/>
+
+		<!-- Product Menu Items -->
+		<menuitem id="menu_phytosanitary_produce_name" 
+				name="Produce Names" 
+				action="action_phytosanitary_produce_name" 
+				parent="menu_phytosanitary_configuration_products" 
+				sequence="10"/>
+
+		<menuitem id="menu_phytosanitary_botanical_name" 
+				name="Botanical Names" 
+				action="action_phytosanitary_botanical_name" 
+				parent="menu_phytosanitary_configuration_products" 
+				sequence="20"/>
+
+		<menuitem id="menu_phytosanitary_uom" 
+				name="Units of Measurement" 
+				action="action_phytosanitary_uom" 
+				parent="menu_phytosanitary_configuration_products" 
+				sequence="30"/>
+
+		<!-- Transport Menu Items -->
+		<menuitem id="menu_phytosanitary_conveyance_method" 
+				name="Conveyance Methods" 
+				action="action_phytosanitary_conveyance_method" 
+				parent="menu_phytosanitary_configuration_transport" 
+				sequence="10"/>
+
+		<menuitem id="menu_phytosanitary_entry_point" 
+				name="Entry Points" 
+				action="action_phytosanitary_entry_point" 
+				parent="menu_phytosanitary_configuration_transport" 
+				sequence="20"/>
+
+		<menuitem id="menu_phytosanitary_origin_place" 
+				name="Places of Origin" 
+				action="action_phytosanitary_origin_place" 
+				parent="menu_phytosanitary_configuration_transport" 
+				sequence="30"/>
+
+		<!-- Treatment Menu Items -->
+		<menuitem id="menu_phytosanitary_disinfection_treatment_type" 
+				name="Treatment Types" 
+				action="action_phytosanitary_disinfection_treatment_type" 
+				parent="menu_phytosanitary_configuration_treatment" 
+				sequence="10"/>
+
+		<menuitem id="menu_phytosanitary_disinfection_chemical_ingredient" 
+				name="Chemical Ingredients" 
+				action="action_phytosanitary_disinfection_chemical_ingredient" 
+				parent="menu_phytosanitary_configuration_treatment" 
+				sequence="20"/>
+
+		<!-- General Menu Items -->
+		<menuitem id="menu_phytosanitary_certificate_issue_place" 
+				name="Certificate Issue Places" 
+				action="action_phytosanitary_certificate_issue_place" 
+				parent="menu_phytosanitary_configuration_general" 
+				sequence="10"/>
 
 	</data>
 </odoo>
