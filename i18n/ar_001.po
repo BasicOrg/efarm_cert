@@ -1,0 +1,1205 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* efarm_cert
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-29 14:20+0000\n"
+"PO-Revision-Date: 2025-09-29 17:59+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"X-Generator: Poedit 3.7\n"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.phytosanitary_certificate_report
+msgid ")<br/>"
+msgstr ")<br/>"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.qr_page
+msgid "/cert/"
+msgstr "/cert/"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.certificate_public_view
+msgid "<i class=\"fa fa-download\"/> Download"
+msgstr "<i class=\"fa fa-download\"/> تحميل"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.certificate_public_view
+msgid "<i class=\"fa fa-eye\"/> View PDF"
+msgstr "<i class=\"fa fa-eye\"/> عرض ملف PDF"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.certificate_public_view
+msgid "<i class=\"fa fa-file-text-o\"/> Certificate Details"
+msgstr "<i class=\"fa fa-file-text-o\"/> تفاصيل الشهادة"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.certificate_public_view
+msgid "<i class=\"fa fa-paperclip\"/> Attachments ("
+msgstr "<i class=\"fa fa-paperclip\"/> المرفقات ("
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.certificate_public_view
+msgid "<span aria-hidden=\"true\">&amp;times;</span>"
+msgstr "<span aria-hidden=\"true\">&amp;times;</span>"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.qr_page
+msgid "<strong>Manual Verification URL:</strong>"
+msgstr "<strong>Manual Verification URL:</strong>"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.certificate_public_view
+msgid ""
+"<strong>This is to certify that the plants, plant products or other "
+"regulated articles described herein have been inspected and/or tested "
+"according to appropriate official procedures, and are considered to be free "
+"from the quarantine pests specified by the importing contracting party, and "
+"are considered to conform with the current phytosanitary requirements of "
+"the importing contracting party including those for regulated non-"
+"quarantine pest.</strong>"
+msgstr ""
+"<strong>This is to certify that the plants, plant products or other "
+"regulated articles described herein have been inspected and/or tested "
+"according to appropriate official procedures, and are considered to be free "
+"from the quarantine pests specified by the importing contracting party, and "
+"are considered to conform with the current phytosanitary requirements of "
+"the importing contracting party including those for regulated non-"
+"quarantine pest.</strong>"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.certificate_public_view
+msgid ""
+"<strong>نؤيد أن النباتات أو المنتجات النباتية الموصوفة أعلاه قد فحصت وفقا "
+"للطرق الرسمية المناسبة، ووجد أنها خالية من آفات الحجر في البلد المستورد، "
+"وأنها مطابقة للمتطلبات النباتية المعمول بها في البلد المستورد.</strong>"
+msgstr ""
+"<strong>نؤيد أن النباتات أو المنتجات النباتية الموصوفة أعلاه قد فحصت وفقا "
+"للطرق الرسمية المناسبة، ووجد أنها خالية من آفات الحجر في البلد المستورد، "
+"وأنها مطابقة للمتطلبات النباتية المعمول بها في البلد المستورد.</strong>"
+
+#. module: efarm_cert
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_certificate__message_needaction
+msgid "Action Needed"
+msgstr "يتطلب اتخاذ إجراء"
+
+#. module: efarm_cert
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_certificate__activity_ids
+msgid "Activities"
+msgstr "الأنشطة"
+
+#. module: efarm_cert
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_certificate__additional_declaration
+#: model_terms:ir.ui.view,arch_db:efarm_cert.certificate_public_view
+msgid "Additional Declaration"
+msgstr "بيان إضافي"
+
+#. module: efarm_cert
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_certificate__disinfection_additional_info
+#: model_terms:ir.ui.view,arch_db:efarm_cert.view_phytosanitary_certificate_form
+msgid "Additional Information"
+msgstr "معلومة اخرى"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.certificate_public_view
+msgid "Additional Treatment Information"
+msgstr "معلومات علاجية إضافية"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.view_phytosanitary_certificate_form
+msgid "Additional treatment information..."
+msgstr "معلومات إضافية عن العلاج..."
+
+#. module: efarm_cert
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_consignee__address
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_exporter__address
+msgid "Address"
+msgstr "العنوان"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.view_phytosanitary_certificate_form
+msgid ""
+"Are you sure you want to confirm this certificate? This action will "
+"generate an official certificate number and cannot be undone."
+msgstr ""
+"هل أنت متأكد من أنك تريد تأكيد هذه الشهادة؟ سيؤدي هذا الإجراء إلى إنشاء رقم "
+"شهادة رسمي ولا يمكن التراجع عنه."
+
+#. module: efarm_cert
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_certificate__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: efarm_cert
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_botanical_name__name
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_produce_name__botanical_name_id
+msgid "Botanical Name"
+msgstr "الاسم العلمي"
+
+#. module: efarm_cert
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_certificate__botanical_name
+#: model_terms:ir.ui.view,arch_db:efarm_cert.certificate_public_view
+msgid "Botanical Name of Plant"
+msgstr "الاسم العلمي للنبات"
+
+#. module: efarm_cert
+#: model:ir.actions.act_window,name:efarm_cert.action_phytosanitary_botanical_name
+#: model:ir.ui.menu,name:efarm_cert.menu_phytosanitary_botanical_name
+#: model_terms:ir.ui.view,arch_db:efarm_cert.view_phytosanitary_botanical_name_tree
+msgid "Botanical Names"
+msgstr "الاسماء العلمية"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.view_phytosanitary_certificate_form
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: efarm_cert
+#: model:ir.model.fields.selection,name:efarm_cert.selection__phytosanitary_certificate__state__canceled
+#: model_terms:ir.ui.view,arch_db:efarm_cert.view_phytosanitary_certificate_search
+msgid "Canceled"
+msgstr "ملغى"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.certificate_public_view
+msgid "Certificate Attachments"
+msgstr "مرفقات الشهادة"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.view_phytosanitary_certificate_form
+msgid "Certificate Information"
+msgstr "معلومات الشهادة"
+
+#. module: efarm_cert
+#: model:ir.actions.act_window,name:efarm_cert.action_phytosanitary_certificate_issue_place
+#: model:ir.ui.menu,name:efarm_cert.menu_phytosanitary_certificate_issue_place
+#: model_terms:ir.ui.view,arch_db:efarm_cert.view_phytosanitary_certificate_issue_place_tree
+msgid "Certificate Issue Places"
+msgstr "أماكن إصدار الشهادات"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.certificate_public_view
+msgid "Certificate No:"
+msgstr "عدد الشهادة:"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.qr_page
+msgid "Certificate Number"
+msgstr "Certificate Number"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.certificate_public_view
+msgid "Certificate UUID:"
+msgstr "رمز الشهادة:"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.qr_page
+msgid "Certificate Verification"
+msgstr "Certificate Verification"
+
+#. module: efarm_cert
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_certificate__disinfection_chemical_ingredient
+#: model_terms:ir.ui.view,arch_db:efarm_cert.certificate_public_view
+msgid "Chemical Ingredient"
+msgstr "المادة الكيمياوية (الفعالة)"
+
+#. module: efarm_cert
+#: model:ir.actions.act_window,name:efarm_cert.action_phytosanitary_disinfection_chemical_ingredient
+#: model:ir.ui.menu,name:efarm_cert.menu_phytosanitary_disinfection_chemical_ingredient
+#: model_terms:ir.ui.view,arch_db:efarm_cert.view_phytosanitary_disinfection_chemical_ingredient_tree
+msgid "Chemical Ingredients"
+msgstr "المواد الكيمياوية"
+
+#. module: efarm_cert
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_disinfection_chemical_ingredient__name
+msgid "Chemical Name"
+msgstr "الاسم الكيميائي"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.certificate_public_view
+msgid "Close"
+msgstr "إغلاق"
+
+#. module: efarm_cert
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_botanical_name__produce_name_id
+msgid "Common Produce Name"
+msgstr "اسم المنتج الشائع"
+
+#. module: efarm_cert
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_certificate__disinfection_concentration
+#: model_terms:ir.ui.view,arch_db:efarm_cert.certificate_public_view
+msgid "Concentration"
+msgstr "التركيز"
+
+#. module: efarm_cert
+#: model:ir.ui.menu,name:efarm_cert.menu_phytosanitary_configuration
+msgid "Configuration"
+msgstr "الإعدادات"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.view_phytosanitary_certificate_form
+msgid "Confirm Certificate"
+msgstr "تأكيد الشهادة"
+
+#. module: efarm_cert
+#: model:ir.model.fields.selection,name:efarm_cert.selection__phytosanitary_certificate__state__confirmed
+#: model_terms:ir.ui.view,arch_db:efarm_cert.view_phytosanitary_certificate_search
+msgid "Confirmed"
+msgstr "مؤكدة"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.view_phytosanitary_certificate_search
+msgid "Consignee"
+msgstr "المرسل إليه"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.view_phytosanitary_certificate_form
+msgid "Consignee Details"
+msgstr "تفاصيل المرسل إليه"
+
+#. module: efarm_cert
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_consignee__name
+msgid "Consignee Name"
+msgstr "اسم المرسل إليه"
+
+#. module: efarm_cert
+#: model:ir.actions.act_window,name:efarm_cert.action_phytosanitary_consignee
+#: model:ir.ui.menu,name:efarm_cert.menu_phytosanitary_consignee
+#: model_terms:ir.ui.view,arch_db:efarm_cert.view_phytosanitary_consignee_tree
+msgid "Consignees"
+msgstr "المستلمون"
+
+#. module: efarm_cert
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_consignee__contact_person
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_exporter__contact_person
+msgid "Contact Person"
+msgstr "الشخص المسؤول"
+
+#. module: efarm_cert
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_conveyance_method__name
+msgid "Conveyance Method"
+msgstr "واسطة النقل"
+
+#. module: efarm_cert
+#: model:ir.actions.act_window,name:efarm_cert.action_phytosanitary_conveyance_method
+#: model:ir.ui.menu,name:efarm_cert.menu_phytosanitary_conveyance_method
+#: model_terms:ir.ui.view,arch_db:efarm_cert.view_phytosanitary_conveyance_method_tree
+msgid "Conveyance Methods"
+msgstr "طرق النقل"
+
+#. module: efarm_cert
+#: model_terms:ir.actions.act_window,help:efarm_cert.action_phytosanitary_botanical_name
+msgid "Create your first Botanical Name"
+msgstr "أنشئ اسمك النباتي الأول"
+
+#. module: efarm_cert
+#: model_terms:ir.actions.act_window,help:efarm_cert.action_phytosanitary_certificate_issue_place
+msgid "Create your first Certificate Issue Place"
+msgstr "إنشاء مكان إصدار شهادتك الأولى"
+
+#. module: efarm_cert
+#: model_terms:ir.actions.act_window,help:efarm_cert.action_phytosanitary_disinfection_chemical_ingredient
+msgid "Create your first Chemical Ingredient"
+msgstr "قم بإنشاء أول مكون كيميائي لك"
+
+#. module: efarm_cert
+#: model_terms:ir.actions.act_window,help:efarm_cert.action_phytosanitary_consignee
+msgid "Create your first Consignee"
+msgstr "إنشاء المرسل إليه الأول"
+
+#. module: efarm_cert
+#: model_terms:ir.actions.act_window,help:efarm_cert.action_phytosanitary_conveyance_method
+msgid "Create your first Conveyance Method"
+msgstr "إنشاء طريقة النقل الأولى"
+
+#. module: efarm_cert
+#: model_terms:ir.actions.act_window,help:efarm_cert.action_phytosanitary_entry_point
+msgid "Create your first Entry Point"
+msgstr "إنشاء نقطة الدخول الأولى"
+
+#. module: efarm_cert
+#: model_terms:ir.actions.act_window,help:efarm_cert.action_phytosanitary_exporter
+msgid "Create your first Exporter"
+msgstr "إنشاء أول مُصدِّر لك"
+
+#. module: efarm_cert
+#: model_terms:ir.actions.act_window,help:efarm_cert.action_phytosanitary_origin_place
+msgid "Create your first Place of Origin"
+msgstr "إنشاء مكان المنشأ الأول"
+
+#. module: efarm_cert
+#: model_terms:ir.actions.act_window,help:efarm_cert.action_phytosanitary_produce_name
+msgid "Create your first Produce Name"
+msgstr "إنشاء اسم منتجك الأول"
+
+#. module: efarm_cert
+#: model_terms:ir.actions.act_window,help:efarm_cert.action_phytosanitary_protection_organization
+msgid "Create your first Protection Organization"
+msgstr "إنشاء منظمة الحماية الأولى"
+
+#. module: efarm_cert
+#: model_terms:ir.actions.act_window,help:efarm_cert.action_phytosanitary_disinfection_treatment_type
+msgid "Create your first Treatment Type"
+msgstr "إنشاء نوع العلاج الأول"
+
+#. module: efarm_cert
+#: model_terms:ir.actions.act_window,help:efarm_cert.action_phytosanitary_uom
+msgid "Create your first Unit of Measurement"
+msgstr "إنشاء وحدة القياس الأولى"
+
+#. module: efarm_cert
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_botanical_name__create_uid
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_certificate__create_uid
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_certificate_issue_place__create_uid
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_consignee__create_uid
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_conveyance_method__create_uid
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_disinfection_chemical_ingredient__create_uid
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_disinfection_treatment_type__create_uid
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_entry_point__create_uid
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_exporter__create_uid
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_origin_place__create_uid
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_produce_name__create_uid
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_protection_organization__create_uid
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_uom__create_uid
+msgid "Created by"
+msgstr "انشأ من قبل"
+
+#. module: efarm_cert
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_botanical_name__create_date
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_certificate__create_date
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_certificate_issue_place__create_date
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_consignee__create_date
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_conveyance_method__create_date
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_disinfection_chemical_ingredient__create_date
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_disinfection_treatment_type__create_date
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_entry_point__create_date
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_exporter__create_date
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_origin_place__create_date
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_produce_name__create_date
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_protection_organization__create_date
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_uom__create_date
+msgid "Created on"
+msgstr "تم إنشاؤها بتاريخ"
+
+#. module: efarm_cert
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_certificate__disinfection_date
+msgid "Date of Disinfection"
+msgstr "تاريخ المعالجة"
+
+#. module: efarm_cert
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_certificate__certificate_issue_date
+#: model_terms:ir.ui.view,arch_db:efarm_cert.certificate_public_view
+msgid "Date of Issue"
+msgstr "تاريخ الإصدار"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.certificate_public_view
+msgid "Date of Treatment"
+msgstr "تاريخ العلاج"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.view_phytosanitary_certificate_form
+msgid "Disinfection & Treatment Details"
+msgstr "تفاصيل التطهير والمعالجة"
+
+#. module: efarm_cert
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_botanical_name__display_name
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_certificate__display_name
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_certificate_issue_place__display_name
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_consignee__display_name
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_conveyance_method__display_name
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_disinfection_chemical_ingredient__display_name
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_disinfection_treatment_type__display_name
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_entry_point__display_name
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_exporter__display_name
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_origin_place__display_name
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_produce_name__display_name
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_protection_organization__display_name
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_uom__display_name
+msgid "Display Name"
+msgstr "الإسم"
+
+#. module: efarm_cert
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_certificate__distinguishing_marks
+#: model_terms:ir.ui.view,arch_db:efarm_cert.certificate_public_view
+msgid "Distinguishing Marks"
+msgstr "العلامات المميزة"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.certificate_public_view
+msgid "Duration &amp; Temperature"
+msgstr "مدة المعاملة ودرجة الحرارة"
+
+#. module: efarm_cert
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_certificate__disinfection_duration_and_temperature
+msgid "Duration and Temperature"
+msgstr "مدة المعاملة ودرجة الحرارة"
+
+#. module: efarm_cert
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_consignee__email
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_exporter__email
+msgid "Email"
+msgstr "البريد الإلكتروني"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.view_phytosanitary_certificate_form
+msgid "Enter any additional declarations or requirements..."
+msgstr "أدخل أي بيان أو متطلبات إضافية..."
+
+#. module: efarm_cert
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_entry_point__name
+msgid "Entry Point Name"
+msgstr "اسم نقطة الدخول"
+
+#. module: efarm_cert
+#: model:ir.actions.act_window,name:efarm_cert.action_phytosanitary_entry_point
+#: model:ir.ui.menu,name:efarm_cert.menu_phytosanitary_entry_point
+#: model_terms:ir.ui.view,arch_db:efarm_cert.view_phytosanitary_entry_point_tree
+msgid "Entry Points"
+msgstr "نقاط الدخول"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.view_phytosanitary_certificate_search
+msgid "Exporter"
+msgstr "المصدّر"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.view_phytosanitary_certificate_form
+msgid "Exporter Details"
+msgstr "تفاصيل المصدّر"
+
+#. module: efarm_cert
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_exporter__name
+msgid "Exporter Name"
+msgstr "اسم المصدّر"
+
+#. module: efarm_cert
+#: model:ir.actions.act_window,name:efarm_cert.action_phytosanitary_exporter
+#: model:ir.ui.menu,name:efarm_cert.menu_phytosanitary_exporter
+#: model_terms:ir.ui.view,arch_db:efarm_cert.view_phytosanitary_exporter_tree
+msgid "Exporters"
+msgstr "المصدّرون"
+
+#. module: efarm_cert
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_certificate__message_follower_ids
+msgid "Followers"
+msgstr "المتابعين"
+
+#. module: efarm_cert
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_certificate__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: efarm_cert
+#: model:ir.ui.menu,name:efarm_cert.menu_phytosanitary_configuration_general
+msgid "General"
+msgstr "عام"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.view_phytosanitary_certificate_search
+msgid "Group By"
+msgstr "تجميع حسب"
+
+#. module: efarm_cert
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_certificate__has_message
+msgid "Has Message"
+msgstr "لديه رسالة"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.qr_page
+msgid "How to Verify This Certificate"
+msgstr "How to Verify This Certificate"
+
+#. module: efarm_cert
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_botanical_name__id
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_certificate__id
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_certificate_issue_place__id
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_consignee__id
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_conveyance_method__id
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_disinfection_chemical_ingredient__id
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_disinfection_treatment_type__id
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_entry_point__id
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_exporter__id
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_origin_place__id
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_produce_name__id
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_protection_organization__id
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_uom__id
+msgid "ID"
+msgstr "المعرف"
+
+#. module: efarm_cert
+#: model:ir.model.fields,help:efarm_cert.field_phytosanitary_certificate__message_needaction
+#: model:ir.model.fields,help:efarm_cert.field_phytosanitary_certificate__message_unread
+msgid "If checked, new messages require your attention."
+msgstr "عند التفعيل ، رسائل جديدة ستتطلب انتباهك."
+
+#. module: efarm_cert
+#: model:ir.model.fields,help:efarm_cert.field_phytosanitary_certificate__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا تم تحديده ، فإن بعض الرسائل بها خطأ في التسليم."
+
+#. module: efarm_cert
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_certificate__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.qr_page
+#: model_terms:ir.ui.view,arch_db:efarm_cert.view_phytosanitary_certificate_search
+msgid "Issue Date"
+msgstr "Issue Date"
+
+#. module: efarm_cert
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_certificate_issue_place__name
+#: model_terms:ir.ui.view,arch_db:efarm_cert.view_phytosanitary_certificate_search
+msgid "Issue Place"
+msgstr "مكان الإصدار"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.certificate_public_view
+msgid "KB"
+msgstr "كيلوبايت"
+
+#. module: efarm_cert
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_botanical_name____last_update
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_certificate____last_update
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_certificate_issue_place____last_update
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_consignee____last_update
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_conveyance_method____last_update
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_disinfection_chemical_ingredient____last_update
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_disinfection_treatment_type____last_update
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_entry_point____last_update
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_exporter____last_update
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_origin_place____last_update
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_produce_name____last_update
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_protection_organization____last_update
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_uom____last_update
+msgid "Last Modified on"
+msgstr "تاريخ اّخر تعديل"
+
+#. module: efarm_cert
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_botanical_name__write_uid
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_certificate__write_uid
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_certificate_issue_place__write_uid
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_consignee__write_uid
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_conveyance_method__write_uid
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_disinfection_chemical_ingredient__write_uid
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_disinfection_treatment_type__write_uid
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_entry_point__write_uid
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_exporter__write_uid
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_origin_place__write_uid
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_produce_name__write_uid
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_protection_organization__write_uid
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_uom__write_uid
+msgid "Last Updated by"
+msgstr "احر تحديث من قبل"
+
+#. module: efarm_cert
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_botanical_name__write_date
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_certificate__write_date
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_certificate_issue_place__write_date
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_consignee__write_date
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_conveyance_method__write_date
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_disinfection_chemical_ingredient__write_date
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_disinfection_treatment_type__write_date
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_entry_point__write_date
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_exporter__write_date
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_origin_place__write_date
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_produce_name__write_date
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_protection_organization__write_date
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_uom__write_date
+msgid "Last Updated on"
+msgstr "احر تحديث بتاريخ"
+
+#. module: efarm_cert
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_certificate__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "المرفقات الرئيسية"
+
+#. module: efarm_cert
+#: model_terms:ir.actions.act_window,help:efarm_cert.action_phytosanitary_disinfection_chemical_ingredient
+msgid "Manage chemical ingredients used in treatments."
+msgstr "إدارة المكونات الكيميائية المستخدمة في العلاجات."
+
+#. module: efarm_cert
+#: model_terms:ir.actions.act_window,help:efarm_cert.action_phytosanitary_produce_name
+msgid "Manage common names of agricultural products."
+msgstr "إدارة الأسماء الشائعة للمنتجات الزراعية."
+
+#. module: efarm_cert
+#: model_terms:ir.actions.act_window,help:efarm_cert.action_phytosanitary_consignee
+msgid "Manage consignees who will be receiving the products."
+msgstr "إدارة المرسل إليهم الذين سيتلقون المنتجات."
+
+#. module: efarm_cert
+#: model_terms:ir.actions.act_window,help:efarm_cert.action_phytosanitary_entry_point
+msgid "Manage entry points (ports, airports, border crossings)."
+msgstr "إدارة نقاط الدخول (الموانئ والمطارات والمعابر الحدودية)."
+
+#. module: efarm_cert
+#: model_terms:ir.actions.act_window,help:efarm_cert.action_phytosanitary_exporter
+msgid "Manage exporters who will be issuing phytosanitary certificates."
+msgstr "إدارة المصدرين الذين سيصدرون شهادات الصحة النباتية."
+
+#. module: efarm_cert
+#: model_terms:ir.actions.act_window,help:efarm_cert.action_phytosanitary_certificate_issue_place
+msgid "Manage places where certificates are issued."
+msgstr "إدارة الأماكن التي يتم فيها إصدار الشهادات."
+
+#. module: efarm_cert
+#: model_terms:ir.actions.act_window,help:efarm_cert.action_phytosanitary_origin_place
+msgid "Manage places where products originate from."
+msgstr "إدارة الأماكن التي تنشأ منها المنتجات."
+
+#. module: efarm_cert
+#: model_terms:ir.actions.act_window,help:efarm_cert.action_phytosanitary_protection_organization
+msgid "Manage plant protection organizations by destination country."
+msgstr "إدارة منظمات وقاية النباتات حسب بلد المقصد."
+
+#. module: efarm_cert
+#: model_terms:ir.actions.act_window,help:efarm_cert.action_phytosanitary_botanical_name
+msgid "Manage scientific botanical names of plants."
+msgstr "إدارة الأسماء النباتية العلمية للنباتات."
+
+#. module: efarm_cert
+#: model_terms:ir.actions.act_window,help:efarm_cert.action_phytosanitary_conveyance_method
+msgid "Manage transportation methods (air, sea, land, etc.)."
+msgstr "إدارة طرق النقل (الجوي، البحري، البري، إلخ)."
+
+#. module: efarm_cert
+#: model_terms:ir.actions.act_window,help:efarm_cert.action_phytosanitary_disinfection_treatment_type
+msgid "Manage types of disinfection treatments."
+msgstr "إدارة أنواع علاجات التطهير."
+
+#. module: efarm_cert
+#: model_terms:ir.actions.act_window,help:efarm_cert.action_phytosanitary_uom
+msgid "Manage units used for measuring quantities (kg, tons, etc.)."
+msgstr "إدارة الوحدات المستخدمة لقياس الكميات (كجم، طن، إلخ)."
+
+#. module: efarm_cert
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_certificate__means_of_conveyance
+#: model_terms:ir.ui.view,arch_db:efarm_cert.certificate_public_view
+msgid "Means of Conveyance"
+msgstr "وسائل النقل"
+
+#. module: efarm_cert
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_certificate__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ تسليم الرسالة"
+
+#. module: efarm_cert
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_certificate__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: efarm_cert
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_certificate__name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: efarm_cert
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_certificate__consignee_name
+#: model_terms:ir.ui.view,arch_db:efarm_cert.certificate_public_view
+msgid "Name and Address of Consignee"
+msgstr "اسم وعنوان المرسل إليه"
+
+#. module: efarm_cert
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_certificate__exporter_name
+#: model_terms:ir.ui.view,arch_db:efarm_cert.certificate_public_view
+msgid "Name and Address of Exporter"
+msgstr "اسم وعنوان المصدر"
+
+#. module: efarm_cert
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_certificate__produce_name
+#: model_terms:ir.ui.view,arch_db:efarm_cert.certificate_public_view
+msgid "Name of Produce"
+msgstr "اسم المنتج"
+
+#. module: efarm_cert
+#: model:ir.model.fields.selection,name:efarm_cert.selection__phytosanitary_certificate__state__new
+#: model_terms:ir.ui.view,arch_db:efarm_cert.view_phytosanitary_certificate_search
+msgid "New"
+msgstr "جديد"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.certificate_public_view
+msgid "No attachments found for this certificate"
+msgstr "لم يتم العثور على مرفقات لهذه الشهادة"
+
+#. module: efarm_cert
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_certificate__packages_number_description
+msgid "Number and Description of Packages"
+msgstr "عدد الطرود ووصفها"
+
+#. module: efarm_cert
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_certificate__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: efarm_cert
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_certificate__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: efarm_cert
+#: model:ir.model.fields,help:efarm_cert.field_phytosanitary_certificate__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "عدد الرسائل التي تتطلب إجراء"
+
+#. module: efarm_cert
+#: model:ir.model.fields,help:efarm_cert.field_phytosanitary_certificate__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل التي بها خطأ في التسليم"
+
+#. module: efarm_cert
+#: model:ir.model.fields,help:efarm_cert.field_phytosanitary_certificate__message_unread_counter
+msgid "Number of unread messages"
+msgstr "عدد الرسائل غير المقروءة"
+
+#. module: efarm_cert
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_protection_organization__name
+msgid "Organization Name"
+msgstr "اسم المنظمة"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.qr_page
+msgid "Origin"
+msgstr "Origin"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.certificate_public_view
+msgid "Packages Description"
+msgstr "وصف الطرود"
+
+#. module: efarm_cert
+#: model:ir.ui.menu,name:efarm_cert.menu_phytosanitary_configuration_parties
+msgid "Parties"
+msgstr "الأطراف"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.view_phytosanitary_certificate_form
+msgid "Party Information"
+msgstr "معلومات الأطراف"
+
+#. module: efarm_cert
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_consignee__phone
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_exporter__phone
+msgid "Phone"
+msgstr "رقم الهاتف"
+
+#. module: efarm_cert
+#: model:ir.model,name:efarm_cert.model_phytosanitary_botanical_name
+msgid "Phytosanitary Botanical Name"
+msgstr "الاسم العلمي للنبات"
+
+#. module: efarm_cert
+#: model:ir.actions.act_window,name:efarm_cert.action_phytosanitary_certificate
+#: model:ir.actions.report,name:efarm_cert.action_phytosanitary_certificate_report
+#: model:ir.model,name:efarm_cert.model_phytosanitary_certificate
+#: model_terms:ir.ui.view,arch_db:efarm_cert.certificate_public_view
+#: model_terms:ir.ui.view,arch_db:efarm_cert.view_phytosanitary_certificate_form
+msgid "Phytosanitary Certificate"
+msgstr "شهادة الصحة النباتية"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.qr_page
+msgid "Phytosanitary Certificate Authentication System"
+msgstr "Phytosanitary Certificate Authentication System"
+
+#. module: efarm_cert
+#: model:ir.model,name:efarm_cert.model_phytosanitary_certificate_issue_place
+msgid "Phytosanitary Certificate Issue Place"
+msgstr "مكان إصدار شهادة الصحة النباتية"
+
+#. module: efarm_cert
+#: model:ir.actions.report,name:efarm_cert.action_phytosanitary_certificate_qr_only_report
+msgid "Phytosanitary Certificate QR Only"
+msgstr "شهادة الصحة النباتية QR فقط"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.view_phytosanitary_certificate_tree
+msgid "Phytosanitary Certificates"
+msgstr "شهادات الصحة النباتية"
+
+#. module: efarm_cert
+#: model:ir.model,name:efarm_cert.model_phytosanitary_consignee
+msgid "Phytosanitary Consignee"
+msgstr "مرسل إليه الصحة النباتية"
+
+#. module: efarm_cert
+#: model:ir.model,name:efarm_cert.model_phytosanitary_conveyance_method
+msgid "Phytosanitary Conveyance Method"
+msgstr "واسطة النقل"
+
+#. module: efarm_cert
+#: model:ir.model,name:efarm_cert.model_phytosanitary_disinfection_chemical_ingredient
+msgid "Phytosanitary Disinfection Chemical Ingredient"
+msgstr "المادة الكيمياوية (الفعالة)"
+
+#. module: efarm_cert
+#: model:ir.model,name:efarm_cert.model_phytosanitary_disinfection_treatment_type
+msgid "Phytosanitary Disinfection Treatment Type"
+msgstr "نوع المعاملة"
+
+#. module: efarm_cert
+#: model:ir.model,name:efarm_cert.model_phytosanitary_entry_point
+msgid "Phytosanitary Entry Point"
+msgstr "نقطة الدخول"
+
+#. module: efarm_cert
+#: model:ir.model,name:efarm_cert.model_phytosanitary_exporter
+msgid "Phytosanitary Exporter"
+msgstr "المصدّر"
+
+#. module: efarm_cert
+#: model:ir.ui.menu,name:efarm_cert.root_menu_phytosanitary_certificate
+msgid "Phytosanitary Management"
+msgstr "إدارة الصحة النباتية"
+
+#. module: efarm_cert
+#: model:ir.model,name:efarm_cert.model_phytosanitary_origin_place
+msgid "Phytosanitary Place of Origin"
+msgstr "المنشأ"
+
+#. module: efarm_cert
+#: model:ir.model,name:efarm_cert.model_phytosanitary_produce_name
+msgid "Phytosanitary Produce Name"
+msgstr "اسم المنتج"
+
+#. module: efarm_cert
+#: model:ir.model,name:efarm_cert.model_phytosanitary_protection_organization
+msgid "Phytosanitary Protection Organization"
+msgstr "منظمة حماية الصحة النباتية"
+
+#. module: efarm_cert
+#: model:ir.model,name:efarm_cert.model_phytosanitary_uom
+msgid "Phytosanitary Unit of Measurement"
+msgstr "وحدة القياس"
+
+#. module: efarm_cert
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_certificate__certificate_place_of_issue
+#: model_terms:ir.ui.view,arch_db:efarm_cert.certificate_public_view
+msgid "Place of Issue"
+msgstr "مكان الإصدار"
+
+#. module: efarm_cert
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_certificate__place_of_origin
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_origin_place__name
+#: model_terms:ir.ui.view,arch_db:efarm_cert.certificate_public_view
+msgid "Place of Origin"
+msgstr "المنشأ"
+
+#. module: efarm_cert
+#: model:ir.actions.act_window,name:efarm_cert.action_phytosanitary_origin_place
+#: model:ir.ui.menu,name:efarm_cert.menu_phytosanitary_origin_place
+#: model_terms:ir.ui.view,arch_db:efarm_cert.view_phytosanitary_origin_place_tree
+msgid "Places of Origin"
+msgstr "أماكن المنشأ"
+
+#. module: efarm_cert
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_certificate__point_of_entry
+#: model_terms:ir.ui.view,arch_db:efarm_cert.certificate_public_view
+msgid "Point of Entry"
+msgstr "نقطة الدخول"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.view_phytosanitary_certificate_search
+msgid "Produce"
+msgstr "المنتجات زراعية"
+
+#. module: efarm_cert
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_produce_name__name
+msgid "Produce Name"
+msgstr "اسم المنتج"
+
+#. module: efarm_cert
+#: model:ir.actions.act_window,name:efarm_cert.action_phytosanitary_produce_name
+#: model:ir.ui.menu,name:efarm_cert.menu_phytosanitary_produce_name
+#: model_terms:ir.ui.view,arch_db:efarm_cert.view_phytosanitary_produce_name_tree
+msgid "Produce Names"
+msgstr "أسماء المنتجات"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.view_phytosanitary_certificate_form
+msgid "Product Information"
+msgstr "معلومات المنتج"
+
+#. module: efarm_cert
+#: model:ir.ui.menu,name:efarm_cert.menu_phytosanitary_configuration_products
+msgid "Products"
+msgstr "المنتجات"
+
+#. module: efarm_cert
+#: model:ir.actions.act_window,name:efarm_cert.action_phytosanitary_protection_organization
+#: model:ir.ui.menu,name:efarm_cert.menu_phytosanitary_protection_organization
+#: model_terms:ir.ui.view,arch_db:efarm_cert.view_phytosanitary_protection_organization_tree
+msgid "Protection Organizations"
+msgstr "منظمات الحماية"
+
+#. module: efarm_cert
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_certificate__quantity_declared
+#: model_terms:ir.ui.view,arch_db:efarm_cert.certificate_public_view
+msgid "Quantity Declared"
+msgstr "الكمية"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.certificate_public_view
+msgid "REPUBLIC OF IRAQ - MINISTRY OF AGRICULTURE"
+msgstr "REPUBLIC OF IRAQ - MINISTRY OF AGRICULTURE"
+
+#. module: efarm_cert
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_consignee__partner_id
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_exporter__partner_id
+msgid "Related Contact"
+msgstr "جهات الاتصال ذات الصلة"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.view_phytosanitary_certificate_form
+msgid "Reset to New"
+msgstr "إعادة تعيين كجديد"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.view_phytosanitary_certificate_form
+msgid "Route Information"
+msgstr "معلومات المسار"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.qr_page
+msgid "Scan the QR code above using any QR code reader"
+msgstr "Scan the QR code above using any QR code reader"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.view_phytosanitary_certificate_search
+msgid "Search Phytosanitary Certificates"
+msgstr "البحث عن شهادات الصحة النباتية"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.certificate_public_view
+msgid "Size:"
+msgstr "الحجم:"
+
+#. module: efarm_cert
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_certificate__state
+#: model_terms:ir.ui.view,arch_db:efarm_cert.view_phytosanitary_certificate_search
+msgid "State"
+msgstr "الحالة"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.view_phytosanitary_certificate_search
+msgid "This Month"
+msgstr "هذا الشهر"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.view_phytosanitary_certificate_search
+msgid "This Year"
+msgstr "هذه السنة"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.qr_page
+msgid "This certificate is digitally secured and protected against tampering"
+msgstr "This certificate is digitally secured and protected against tampering"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.certificate_public_view
+msgid "To Plant Protection Organization of"
+msgstr "إلى منظمة وقاية النباتات في"
+
+#. module: efarm_cert
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_certificate__to_protection_organization
+msgid "To the Protection Organization of"
+msgstr "إلى منظمة وقاية النباتات في"
+
+#. module: efarm_cert
+#: model:ir.ui.menu,name:efarm_cert.menu_phytosanitary_configuration_transport
+msgid "Transport"
+msgstr "النقل"
+
+#. module: efarm_cert
+#: model:ir.ui.menu,name:efarm_cert.menu_phytosanitary_configuration_treatment
+msgid "Treatment"
+msgstr "المعاملة"
+
+#. module: efarm_cert
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_disinfection_treatment_type__name
+msgid "Treatment Type"
+msgstr "نوع المعاملة"
+
+#. module: efarm_cert
+#: model:ir.actions.act_window,name:efarm_cert.action_phytosanitary_disinfection_treatment_type
+#: model:ir.ui.menu,name:efarm_cert.menu_phytosanitary_disinfection_treatment_type
+#: model_terms:ir.ui.view,arch_db:efarm_cert.view_phytosanitary_disinfection_treatment_type_tree
+msgid "Treatment Types"
+msgstr "أنواع المعاملات"
+
+#. module: efarm_cert
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_certificate__disinfection_treatment_type
+#: model_terms:ir.ui.view,arch_db:efarm_cert.certificate_public_view
+msgid "Type of Treatment"
+msgstr "نوع المعاملة"
+
+#. module: efarm_cert
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_certificate__uuid
+msgid "UUID"
+msgstr "رمز الشهادة"
+
+#. module: efarm_cert
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_uom__name
+msgid "Unit Name"
+msgstr "اسم الوحدة"
+
+#. module: efarm_cert
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_certificate__quantity_uom
+msgid "Unit of Measurement"
+msgstr "وحدة القياس"
+
+#. module: efarm_cert
+#: model:ir.actions.act_window,name:efarm_cert.action_phytosanitary_uom
+#: model:ir.ui.menu,name:efarm_cert.menu_phytosanitary_uom
+#: model_terms:ir.ui.view,arch_db:efarm_cert.view_phytosanitary_uom_tree
+msgid "Units of Measurement"
+msgstr "وحدات القياس"
+
+#. module: efarm_cert
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_certificate__message_unread
+msgid "Unread Messages"
+msgstr "الرسائل غير المقروءة"
+
+#. module: efarm_cert
+#: model:ir.model.fields,field_description:efarm_cert.field_phytosanitary_certificate__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "عداد الرسائل غير المقروءة"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.qr_page
+msgid "View complete certificate details and authenticity status"
+msgstr "View complete certificate details and authenticity status"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.qr_page
+msgid "You will be directed to the official verification portal"
+msgstr "You will be directed to the official verification portal"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.certificate_public_view
+msgid "| Generated by Phytosanitary Certificate System"
+msgstr "|تم إصدارها من قبل نظام شهادات الصحة النباتية"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.certificate_public_view
+msgid "إلى منظمة وقاية النباتات في"
+msgstr "إلى منظمة وقاية النباتات في"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.certificate_public_view
+msgid "اسم المنتج"
+msgstr "اسم المنتج"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.certificate_public_view
+msgid "اسم وعنوان المرسل إليه"
+msgstr "اسم وعنوان المرسل إليه"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.certificate_public_view
+msgid "اسم وعنوان المصدر"
+msgstr "اسم وعنوان المصدر"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.certificate_public_view
+msgid "الاسم النباتي للنبات"
+msgstr "الاسم النباتي للنقاط"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.certificate_public_view
+msgid "التركيز"
+msgstr "التركيز"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.certificate_public_view
+msgid "العلامات المميزة"
+msgstr "العلامات المميزة"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.certificate_public_view
+msgid "الكمية المصرح بها"
+msgstr "الكمية المصرح بها"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.certificate_public_view
+msgid "المادة الكيميائية"
+msgstr "المادة الكيميائية"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.certificate_public_view
+msgid "المدة ودرجة الحرارة"
+msgstr "المدة ودرجة الحرارة"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.certificate_public_view
+msgid "بيان إضافي"
+msgstr "بيان إضافي"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.certificate_public_view
+msgid "تاريخ الإصدار"
+msgstr "تاريخ الإصدار الإصدار"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.certificate_public_view
+msgid "تاريخ المعالجة"
+msgstr "تاريخ المعالجة المعالجة"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.certificate_public_view
+msgid "جمهورية العراق - وزارة الزراعة"
+msgstr "جمهورية العراق - وزارة الزراعة"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.certificate_public_view
+msgid "شهادة السلامة من الآفات الزراعية"
+msgstr "شهادة السلامة من الآفات الزراعية"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.certificate_public_view
+msgid "معلومات إضافية للمعالجة"
+msgstr "معلومات إضافية للمعالجة"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.certificate_public_view
+msgid "مكان الإصدار"
+msgstr "مكان الإصدار الإصدار"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.certificate_public_view
+msgid "مكان المنشأ"
+msgstr "مكان المنشأ"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.certificate_public_view
+msgid "نقطة الدخول"
+msgstr "نقطة الدخول"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.certificate_public_view
+msgid "نوع المعالجة أو التطهير"
+msgstr "نوع المعالجة أو التطهير"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.certificate_public_view
+msgid "واسطة النقل"
+msgstr "واسطة النقل"
+
+#. module: efarm_cert
+#: model_terms:ir.ui.view,arch_db:efarm_cert.certificate_public_view
+msgid "وصف الطرود"
+msgstr "وصف الطرود"

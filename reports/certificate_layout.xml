@@ -72,10 +72,31 @@
                         border-collapse: collapse;
                         table-layout: fixed; /* Force fixed table layout */
                     }
+
+                    .sub-table-height-110 {
+                        width: 100%;
+                        height: 110px;
+                        border-collapse: collapse;
+                        table-layout: fixed; /* Force fixed table layout */
+                    }
+
+                    .sub-table-height-120 {
+                        width: 100%;
+                        height: 120px;
+                        border-collapse: collapse;
+                        table-layout: fixed; /* Force fixed table layout */
+                    }
                     
                     .sub-table-height-50 {
                         width: 100%;
                         height: 50px;
+                        border-collapse: collapse;
+                        table-layout: fixed; /* Force fixed table layout */
+                    }
+
+                    .sub-table-height-55 {
+                        width: 100%;
+                        height: 55px;
                         border-collapse: collapse;
                         table-layout: fixed; /* Force fixed table layout */
                     }
@@ -96,7 +117,7 @@
                     
                     /* Layout Borders */
                     .layout-borders {
-                        border: 3px solid transparent; /* Change to 'black' for debugging layout */
+                        border: 3px solid transparent; /* Change to 'red' for debugging layout and return to transparent */
                     }
                     
                     /* Row Heights */
@@ -119,6 +140,8 @@
                     .cell-w-18 { width: 18% !important; }
                     .cell-w-20 { width: 20% !important; }
                     .cell-w-22 { width: 22% !important; }
+                    .cell-w-23 { width: 23% !important; }
+                    .cell-w-25 { width: 25% !important; }
                     .cell-w-30 { width: 30% !important; }
                     .cell-w-34 { width: 34% !important; }
                     .cell-w-35 { width: 35% !important; }
@@ -129,7 +152,9 @@
                     .cell-w-60 { width: 60% !important; }
                     .cell-w-65 { width: 65% !important; }
                     .cell-w-70 { width: 70% !important; }
+                    .cell-w-75 { width: 75% !important; }
                     .cell-w-78 { width: 78% !important; }
+                    .cell-w-80 { width: 80% !important; }
                     
                     /* Cell Styles */
                     .cell-standard {
@@ -430,7 +455,7 @@
 
         <template id="efarm_cert.qr_page">
         
-            <div class="qr-verification-page">
+            <div class="qr-verification-page" dir="ltr" style="direction: ltr !important;">
             
                 <div class="qr-header">
                     <h2>Certificate Verification</h2>
@@ -461,17 +486,17 @@
                         </div>
                     </div>
                     
-                    <div class="qr-instructions">
-                        <h3>How to Verify This Certificate</h3>
+                    <div class="qr-instructions" dir="ltr" style="direction: ltr !important; text-align: left;">
+                        <h3 dir="ltr" style="direction: ltr !important; text-align: left;">How to Verify This Certificate</h3>
                         <ul class="qr-instructions-list">
                             <li>Scan the QR code above using any QR code reader</li>
                             <li>You will be directed to the official verification portal</li>
                             <li>View complete certificate details and authenticity status</li>
                         </ul>
                         
-                        <div class="verification-url">
-                            <strong>Manual Verification URL:</strong>
-                            <span><t t-esc="verification_portal_url"/>/cert/<t t-esc="o.uuid"/></span>
+                        <div class="verification-url" dir="ltr" style="direction: ltr !important; text-align: left;">
+                            <strong dir="ltr" style="direction: ltr; text-align: left;">Manual Verification URL:</strong>
+                            <span dir="ltr" style="direction: ltr; text-align: left;"><t t-esc="verification_portal_url"/>/cert/<t t-esc="o.uuid"/></span>
                         </div>
                     </div>
                 </div>
@@ -488,7 +513,7 @@
 
             <!-- Page Break for Second Page -->
             <div style="page-break-after: always;"></div>
-            
+
         </template>
 
 

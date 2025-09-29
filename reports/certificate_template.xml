@@ -5,8 +5,8 @@
             <t t-call="efarm_cert.external_layout">
                 <t t-call="efarm_cert.head"/>
                 <t t-foreach="docs" t-as="o">
-                    <img src="/efarm_cert/static/src/img/template.jpg" width="1000px" height="1430px" style="position: absolute; z-index: -100; opacity: 0;"/>
-                    <div class="certificate" dir="ltr" style="direction: ltr;">
+                    <img src="/efarm_cert/static/src/img/certificate_template.jpg" width="1000px" height="1430px" style="position: absolute; z-index: -100; opacity: 0;"/>
+                    <div class="certificate" dir="ltr" style="direction: ltr !important;">
                         <table class="main-table">
                             <!-- Row 1 -->
                             <tr class="row-h-60 layout-borders">
@@ -72,10 +72,10 @@
                                 </td>
                                 <td class="cell-w-50 cell-standard layout-borders">
                                     <table class="sub-table">
-                                        <tr class="row-h-50 layout-borders"></tr>
+                                        <tr class="row-h-60 layout-borders"></tr>
                                         <tr class="row-h-30 layout-borders">
                                             <td class="cell-w-45 cell-standard layout-borders"></td>
-                                            <td class="cell-w-55 cell-value cell-fixed-medium layout-borders">
+                                            <td class="cell-w-55 cell-value cell-fixed-medium layout-borders" style="text-align: left;">
                                                 <span class="field-value">
                                                     <t t-esc="o.name"/>
                                                 </span>
@@ -172,8 +172,8 @@
                                     </table>
                                     <table class="sub-table-height-50">
                                         <tr class="layout-borders">
-                                            <td class="layout-borders cell-w-35"></td>
-                                            <td class="layout-borders cell-w-65 cell-value cell-fixed-medium">
+                                            <td class="layout-borders cell-w-20"></td>
+                                            <td class="layout-borders cell-w-80 cell-value cell-fixed-medium">
                                                 <span class="field-value"><t t-esc="o.disinfection_treatment_type.name"/></span>
                                             </td>
                                         </tr>
@@ -196,12 +196,12 @@
                                     <table class="sub-table-height-50">
                                         <tr class="layout-borders">
                                             <td class="layout-borders cell-w-35"></td>
-                                            <td class="layout-borders cell-w-40 cell-value">
+                                            <td class="layout-borders cell-w-35 cell-value">
                                                 <span class="field-value">
                                                     <t t-esc="o.disinfection_concentration"/>
                                                 </span>
                                             </td>
-                                            <td class="layout-borders cell-w-18"></td>
+                                            <td class="layout-borders cell-w-23"></td>
                                             <td class="layout-borders cell-w-18 cell-value">
                                                 <span class="field-value">
                                                     <t t-esc="o.disinfection_date" t-options="{'widget': 'date', 'format': 'dd/MM'}"/>
@@ -221,7 +221,7 @@
                                     </table>
                                 </td>
                                 <td class="cell-w-50 cell-standard layout-borders">
-                                    <table class="sub-table-height-100">
+                                    <table class="sub-table-height-110">
                                         <tr class="layout-borders">
                                             <td class="layout-borders cell-w-30"></td>
                                             <td class="layout-borders cell-w-70 cell-value cell-fixed-large">
