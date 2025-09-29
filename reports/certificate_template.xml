@@ -19,8 +19,7 @@
                                 <td class="cell-w-50 cell-value cell-long-text layout-borders">
                                     <div class="text-container">
                                         <span class="field-value field-padding">
-                                            <t t-esc="o.exporter_name.name"/><br/>
-                                            <t t-esc="o.exporter_name.address"/>
+                                            <t t-esc="o.exporter_name.name"/> - <t t-esc="o.exporter_name.address"/>
                                         </span>
                                     </div>
                                 </td>
@@ -48,8 +47,7 @@
                                 <td class="cell-w-50 cell-value cell-long-text layout-borders">
                                     <div class="text-container">
                                         <span class="field-value field-padding">
-                                            <t t-esc="o.consignee_name.name"/><br/>
-                                            <t t-esc="o.consignee_name.address"/>
+                                            <t t-esc="o.consignee_name.name"/> - <t t-esc="o.consignee_name.address"/>
                                         </span>
                                     </div>
                                 </td>

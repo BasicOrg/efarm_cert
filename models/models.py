@@ -8,7 +8,7 @@ class PhytosanitaryCertificate(models.Model):
     _inherit = ['mail.thread']
 
     activity_ids = fields.One2many('mail.activity', 'res_id', string='Activities', domain=[('res_model', '=', 'phytosanitary.certificate')])
-    name = fields.Char(required = True, copy=False, readonly=True, index=True, default='')
+    name = fields.Char(required = True, copy=False, readonly=True, index=True, default=' ')
     state = fields.Selection([
         ('new', 'New'),
         ('confirmed', 'Confirmed'),
