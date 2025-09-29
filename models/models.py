@@ -82,13 +82,21 @@ class PhytosanitaryCertificate(models.Model):
         if not self.produce_name and self.botanical_name and self.botanical_name.produce_name_id:
             self.produce_name = self.botanical_name.produce_name_id
     
+    def set_product_name_botanical_link(self, values, mode='write'):
+        if 'produce_name' in values or 'botanical_name' in values:
+            if (not self.produce_name.botanical_name_id and not self.botanical_name.produce_name_id) or mode == 'create':
+                self.produce_name.botanical_name_id = self.botanical_name.id
+                self.botanical_name.produce_name_id = self.produce_name.id
+
+    @api.model
+    def create(self, values):
+        result = super().create(values)
+        result.set_product_name_botanical_link(values, mode='create')
+        return result
 
     def write(self, values):
         res = super().write(values)
-        if 'produce_name' in values and 'botanical_name' in values:
-            if not self.produce_name.botanical_name_id and not self.botanical_name.produce_name_id:
-                self.produce_name.botanical_name_id = self.botanical_name.id
-                self.botanical_name.produce_name_id = self.produce_name.id
+        self.set_product_name_botanical_link(values)
         return res
 
 
