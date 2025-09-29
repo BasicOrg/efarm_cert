@@ -34,7 +34,7 @@
 			string="Phytosanitary Certificate QR Only"
 			model="phytosanitary.certificate"
 			report_type="qweb-pdf"
-			name="efarm_cert.phytosanitary_certificate_report"
+			name="efarm_cert.phytosanitary_certificate_qr_only_report"
 			file="Phytosanitary Certificate QR Code Page"
 			menu = "True"
 			paperformat="paperformat_certificate"
