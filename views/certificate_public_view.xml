@@ -429,7 +429,7 @@
                                                             <div class="attachment-icon image-icon">
                                                                 <i class="fa fa-file-image-o"></i>
                                                             </div>
-                                                            <img t-att-src="'/web/content/' + str(attachment.id)" 
+                                                            <img t-att-src="'/cert/' + certificate.uuid + '/attachment/' + str(attachment.id)" 
                                                                  t-att-alt="attachment.name"
                                                                  class="image-thumbnail"
                                                                  data-toggle="modal" 
@@ -448,12 +448,12 @@
                                                                             </button>
                                                                         </div>
                                                                         <div class="modal-body modal-body-custom text-center">
-                                                                            <img t-att-src="'/web/content/' + str(attachment.id)" 
+                                                                            <img t-att-src="'/cert/' + certificate.uuid + '/attachment/' + str(attachment.id)" 
                                                                                  t-att-alt="attachment.name"
                                                                                  style="max-width: 100%; height: auto;"/>
                                                                         </div>
                                                                         <div class="modal-footer">
-                                                                            <a t-att-href="'/web/content/' + str(attachment.id) + '?download=true'" 
+                                                                            <a t-att-href="'/cert/' + certificate.uuid + '/attachment/' + str(attachment.id) + '?download=1'" 
                                                                                class="btn btn-primary">
                                                                                 <i class="fa fa-download"></i> Download
                                                                             </a>
@@ -475,7 +475,7 @@
                                                                     t-att-data-target="'#pdfModal' + str(attachment.id)">
                                                                 <i class="fa fa-eye"></i> View PDF
                                                             </button>
-                                                            <a t-att-href="'/web/content/' + str(attachment.id) + '?download=true'" 
+                                                            <a t-att-href="'/cert/' + certificate.uuid + '/attachment/' + str(attachment.id) + '?download=1'" 
                                                                class="btn btn-outline-secondary btn-sm ml-2">
                                                                 <i class="fa fa-download"></i> Download
                                                             </a>
@@ -491,13 +491,13 @@
                                                                             </button>
                                                                         </div>
                                                                         <div class="modal-body modal-body-custom p-0">
-                                                                            <iframe t-att-src="'/web/content/' + str(attachment.id)" 
+                                                                            <iframe t-att-src="'/cert/' + certificate.uuid + '/attachment/' + str(attachment.id)" 
                                                                                     class="pdf-viewer"
                                                                                     frameborder="0">
                                                                             </iframe>
                                                                         </div>
                                                                         <div class="modal-footer">
-                                                                            <a t-att-href="'/web/content/' + str(attachment.id) + '?download=true'" 
+                                                                            <a t-att-href="'/cert/' + certificate.uuid + '/attachment/' + str(attachment.id) + '?download=1'" 
                                                                                class="btn btn-primary">
                                                                                 <i class="fa fa-download"></i> Download
                                                                             </a>
@@ -517,7 +517,7 @@
                                                             <small class="text-muted d-block">
                                                                 Size: <t t-esc="round(attachment.file_size / 1024.0, 2)"/> KB
                                                             </small>
-                                                            <a t-att-href="'/web/content/' + str(attachment.id) + '?download=true'" 
+                                                            <a t-att-href="'/cert/' + certificate.uuid + '/attachment/' + str(attachment.id) + '?download=1'" 
                                                                class="btn btn-outline-primary btn-sm mt-2">
                                                                 <i class="fa fa-download"></i> Download
                                                             </a>
