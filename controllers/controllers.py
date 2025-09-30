@@ -2,6 +2,7 @@
 from odoo import http
 from odoo.http import request
 from werkzeug.exceptions import NotFound, Forbidden
+from werkzeug.urls import url_quote
 import base64
 
 class CertificateController(http.Controller):
@@ -47,6 +48,17 @@ class CertificateController(http.Controller):
         else:
             raise NotFound("Attachment content not found")
         
+        # Encode filename properly for non-ASCII characters
+        filename = attachment.name or 'attachment'
+        
+        # Try to encode filename as ASCII, if it fails use URL encoding
+        try:
+            filename.encode('ascii')
+            encoded_filename = filename
+        except UnicodeEncodeError:
+            # Use RFC 2231 encoding for non-ASCII filenames
+            encoded_filename = url_quote(filename)
+        
         # Set proper headers
         headers = [
             ('Content-Type', attachment.mimetype or 'application/octet-stream'),
@@ -55,8 +67,8 @@ class CertificateController(http.Controller):
         
         # Add download header if requested
         if download:
-            headers.append(('Content-Disposition', f'attachment; filename="{attachment.name}"'))
+            headers.append(('Content-Disposition', f"attachment; filename*=UTF-8''{encoded_filename}"))
         else:
-            headers.append(('Content-Disposition', f'inline; filename="{attachment.name}"'))
+            headers.append(('Content-Disposition', f"inline; filename*=UTF-8''{encoded_filename}"))
         
         return request.make_response(file_content, headers)
